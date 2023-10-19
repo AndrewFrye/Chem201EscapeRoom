@@ -1,12 +1,15 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escape Room", "Escape Room.csproj", "{17AADA4F-EDD9-42F2-BBB0-1F3C120E7715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-	Debug|Any CPU = Debug|Any CPU
-	ExportDebug|Any CPU = ExportDebug|Any CPU
-	ExportRelease|Any CPU = ExportRelease|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{17AADA4F-EDD9-42F2-BBB0-1F3C120E7715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -15,5 +18,11 @@ Global
 		{17AADA4F-EDD9-42F2-BBB0-1F3C120E7715}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{17AADA4F-EDD9-42F2-BBB0-1F3C120E7715}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{17AADA4F-EDD9-42F2-BBB0-1F3C120E7715}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72D621CF-3CBF-46C2-A9EC-B6E329A10D7B}
 	EndGlobalSection
 EndGlobal
