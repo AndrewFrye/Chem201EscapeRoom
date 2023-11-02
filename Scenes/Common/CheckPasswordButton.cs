@@ -2,20 +2,16 @@
 
 namespace EscapeRoom.Scenes.Common
 {
-    public class CheckPasswordButton : Button
+    public abstract class CheckPasswordButton : Button
     {
-        [Export] private string PasswordInputNodePath;
-        [Export] private string PasswordLabelNodePath;
-        [Export] private string NextSceneButtonNodePath;
-        [Export] private string Password;
+        [Export] protected string PasswordInputNodePath;
+        [Export] protected string Password;
         
-        private TextEdit passwordInput { get; set; }
-        private Button nextSceneButton { get; set; }
+        protected TextEdit passwordInput { get; set; }
 
-        public override void _Ready()
+        protected void Init()
         {
             passwordInput = GetNode(PasswordInputNodePath) as TextEdit;
-            nextSceneButton = GetNode(NextSceneButtonNodePath) as Button;
         }
 
         public override void _Pressed()
@@ -30,14 +26,8 @@ namespace EscapeRoom.Scenes.Common
             }
         }
 
-        private void onCorrectInput()
-        {
-            nextSceneButton.Visible = true;
-        }
+        protected abstract void onCorrectInput();
 
-        private void onIncorrectInput()
-        {
-            
-        }
+        protected abstract void onIncorrectInput();
     }
 }

@@ -6,13 +6,18 @@ public class BuretContol : VSlider
     private Label flowRateLabel;
     private Label addedVolumeLabel;
     private Sprite flask;
-    public float addedVolume;
+    private float addedVolume;
     [Export] public float targetVolume, tolerance;
     
     public override void _Ready()
     {
         addedVolumeLabel = GetNode<Label>("%AddedBaseVolumeLabel");
         flowRateLabel = GetNode<Label>("%[Debug]BuretFlowRateLabel");
+        
+#if RELEASE
+        flowRateLabel.Visible = false;
+#endif
+        
         flask = GetNode<Sprite>("%TitrationFlask");
 
         addedVolume = 0f;
