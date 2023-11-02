@@ -54,7 +54,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 100, 50 )
 scroll_horizontal_enabled = false
 
-[node name="PasswordKeyContainer" type="GridContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
+[node name="PasswordKeyContainer" type="VBoxContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
 unique_name_in_owner = true
 
 [node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
@@ -92,7 +92,7 @@ PasswordInputNodePath = "%Q1PasswordInput"
 Password = "Chlorine"
 dataGridPath = "%PasswordKeyContainer"
 keyValue = "L"
-keyIndex = 2
+keyIndex = 1
 
 [node name="NextSceneButton" type="Button" parent="."]
 visible = false
