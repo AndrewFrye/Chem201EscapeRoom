@@ -17,7 +17,6 @@ margin_bottom = 579.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -26,31 +25,39 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="PasswordInput" type="TextEdit" parent="SubQuestions/PasswordContainer"]
-margin_top = 225.0
+[node name="Label" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 189.0
 margin_right = 981.0
-margin_bottom = 250.0
+margin_bottom = 203.0
+text = "The Password Is:"
+align = 1
+
+[node name="PasswordInput" type="TextEdit" parent="SubQuestions/PasswordContainer"]
+margin_top = 207.0
+margin_right = 981.0
+margin_bottom = 232.0
 rect_min_size = Vector2( 0, 25 )
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 254.0
+margin_top = 236.0
 margin_right = 981.0
-margin_bottom = 268.0
-text = "The password is: 12 2 3 1 11 5 14 4 6 11 15 2 4 1 3 14 11 9 13 14 4 7 3 10 8 "
+margin_bottom = 250.0
+text = "| 12 | 2 | 3 | 1 | 11 | 5 | 14 | 4 | 6 | 11 | 15 | 2 | 4 | 1 |3 | 14 | 1| 1 | 9 |13|14 | 4 | 7 | 3 | 10 | 8 |"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
-margin_top = 272.0
+margin_top = 254.0
 margin_right = 981.0
-margin_bottom = 292.0
+margin_bottom = 274.0
 text = "Check"
 script = ExtResource( 3 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 278.0
+margin_right = 981.0
+margin_bottom = 328.0
 rect_min_size = Vector2( 100, 50 )
 scroll_horizontal_enabled = false
 
@@ -58,6 +65,7 @@ scroll_horizontal_enabled = false
 unique_name_in_owner = true
 
 [node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -93,6 +101,74 @@ Password = "Chlorine"
 dataGridPath = "%PasswordKeyContainer"
 keyValue = "L"
 keyIndex = 1
+
+[node name="Q2Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_left = -7.0
+margin_top = -26.0
+margin_right = 33.0
+margin_bottom = 14.0
+
+[node name="Q2PasswordInput" type="TextEdit" parent="SubQuestions/Q2Container"]
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q2Container"]
+margin_top = 254.0
+margin_right = 981.0
+margin_bottom = 268.0
+text = "What atom has the atomic weight: 50.94?"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q2Container"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -8.0
+margin_bottom = -36.0
+
+[node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q7Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q8Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q9Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Q10Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="NextSceneButton" type="Button" parent="."]
 visible = false
