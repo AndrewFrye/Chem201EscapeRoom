@@ -32,11 +32,12 @@ margin_bottom = 203.0
 text = "The Password Is:"
 align = 1
 
-[node name="PasswordInput" type="TextEdit" parent="SubQuestions/PasswordContainer"]
+[node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
 margin_top = 207.0
 margin_right = 981.0
 margin_bottom = 232.0
 rect_min_size = Vector2( 0, 25 )
+align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
 margin_top = 236.0
@@ -74,7 +75,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q1PasswordInput" type="TextEdit" parent="SubQuestions/Q1Container"]
+[node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
 unique_name_in_owner = true
 margin_top = 225.0
 margin_right = 981.0
@@ -109,7 +110,8 @@ margin_top = -26.0
 margin_right = 33.0
 margin_bottom = 14.0
 
-[node name="Q2PasswordInput" type="TextEdit" parent="SubQuestions/Q2Container"]
+[node name="Q2PasswordInput" type="LineEdit" parent="SubQuestions/Q2Container"]
+unique_name_in_owner = true
 margin_top = 225.0
 margin_right = 981.0
 margin_bottom = 250.0
@@ -127,11 +129,29 @@ autowrap = true
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q2Container"]
 margin_right = 12.0
 margin_bottom = 20.0
+script = ExtResource( 4 )
+PasswordInputNodePath = "%Q2PasswordInput"
+dataGridPath = "%PasswordKeyContainer"
 
 [node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
+unique_name_in_owner = true
+margin_right = 58.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="SubQuestions/Q3Container"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Button" type="Button" parent="SubQuestions/Q3Container"]
+margin_right = 12.0
+margin_bottom = 20.0
+script = ExtResource( 4 )
+PasswordInputNodePath = "%Q3PasswordInput"
 
 [node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
