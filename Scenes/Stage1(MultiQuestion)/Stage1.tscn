@@ -81,6 +81,7 @@ margin_top = 225.0
 margin_right = 981.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 0, 25 )
+align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
 margin_top = 254.0
@@ -101,7 +102,9 @@ PasswordInputNodePath = "%Q1PasswordInput"
 Password = "Chlorine"
 dataGridPath = "%PasswordKeyContainer"
 keyValue = "L"
+key2Value = "C"
 keyIndex = 2
+key2Index = 13
 
 [node name="Q2Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
@@ -116,6 +119,7 @@ margin_top = 225.0
 margin_right = 981.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 0, 25 )
+align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q2Container"]
 margin_top = 254.0
@@ -131,7 +135,10 @@ margin_right = 12.0
 margin_bottom = 20.0
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q2PasswordInput"
+Password = "Vanadium"
 dataGridPath = "%PasswordKeyContainer"
+keyValue = "V"
+keyIndex = 1
 
 [node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
@@ -142,21 +149,60 @@ margin_bottom = 40.0
 unique_name_in_owner = true
 margin_right = 58.0
 margin_bottom = 24.0
+align = 1
 
-[node name="Label" type="Label" parent="SubQuestions/Q3Container"]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q3Container"]
+margin_top = 254.0
+margin_right = 981.0
+margin_bottom = 268.0
+text = "Name of PO4(3-)"
+align = 1
+valign = 1
+autowrap = true
 
-[node name="Button" type="Button" parent="SubQuestions/Q3Container"]
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
 margin_right = 12.0
 margin_bottom = 20.0
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q3PasswordInput"
+Password = "Phosphate"
+dataGridPath = "%PasswordKeyContainer"
+keyValue = "A"
+key2Value = "P"
+keyIndex = 4
+key2Index = 6
 
 [node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="Q4PasswordInput" type="LineEdit" parent="SubQuestions/Q4Container"]
+unique_name_in_owner = true
+margin_right = 58.0
+margin_bottom = 24.0
+align = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q4Container"]
+margin_top = 254.0
+margin_right = 981.0
+margin_bottom = 268.0
+text = "Name of Br3O4"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q4Container"]
+margin_right = 12.0
+margin_bottom = 20.0
+script = ExtResource( 4 )
+PasswordInputNodePath = "%Q4PasswordInput"
+Password = "Tribromine tetroxide"
+dataGridPath = "%PasswordKeyContainer"
+keyValue = "I"
+key2Value = "G"
+keyIndex = 12
+key2Index = 5
 
 [node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false

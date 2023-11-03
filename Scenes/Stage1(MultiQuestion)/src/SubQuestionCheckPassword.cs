@@ -3,10 +3,10 @@ using Godot;
 
 namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
 {
-    public class SubQuestionCheckPassword : EscapeRoom.Scenes.Common.CheckPasswordButton
+    public class SubQuestionCheckPassword : Common.CheckPasswordButton
     {
-        [Export] private string dataGridPath, keyValue;
-        [Export] private int keyIndex;
+        [Export] private string dataGridPath, keyValue, key2Value;
+        [Export] private int keyIndex, key2Index;
 
         private VBoxContainer dataGrid;
 
@@ -27,9 +27,27 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
 
             var valueLabel = new Label();
             valueLabel.Text = keyValue;
+
+            var row = new HBoxContainer();
+            row.AddChild(indexLabel);
+            row.AddChild(valueLabel);
+
+            if (key2Value != "NULL")
+            {
+                var index2Label = new Label();
+                index2Label.Text = (key2Index + 1).ToString();
+
+                var value2Label = new Label();
+                value2Label.Text = key2Value;
+
+                var row2 = new HBoxContainer();
+                row2.AddChild(index2Label);
+                row2.AddChild(value2Label);
+                
+                dataGrid.AddChild(row2);
+            }
             
-            dataGrid.AddChild(indexLabel);
-            dataGrid.AddChild(valueLabel);
+            dataGrid.AddChild(row);
 
             foreach (HBoxContainer childContainer in dataGrid.GetChildren())
             {
