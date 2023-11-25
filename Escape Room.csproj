@@ -3,4 +3,10 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>EscapeRoom</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Scenes\Stage3(Main)\" />
+    <Folder Include="Scenes\Stage4(Gases)\" />
+    <Folder Include="Scenes\Stage5(ElectronConfiguration)\" />
+    <Folder Include="Scenes\Stage6(MolecularGeometry)\" />
+  </ItemGroup>
 </Project>
