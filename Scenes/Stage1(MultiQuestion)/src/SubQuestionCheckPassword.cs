@@ -32,7 +32,7 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
             row.AddChild(indexLabel);
             row.AddChild(valueLabel);
 
-            if (key2Value != "NULL")
+            if (key2Value != null)
             {
                 var index2Label = new Label();
                 index2Label.Text = (key2Index + 1).ToString();

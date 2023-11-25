@@ -7,11 +7,11 @@ namespace EscapeRoom.Scenes.Common
         [Export] protected string PasswordInputNodePath;
         [Export] protected string Password;
         
-        protected TextEdit passwordInput { get; set; }
+        protected LineEdit passwordInput { get; set; }
 
         protected void Init()
         {
-            passwordInput = GetNode(PasswordInputNodePath) as TextEdit;
+            passwordInput = GetNode(PasswordInputNodePath) as LineEdit;
         }
 
         public override void _Pressed()
