@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Stage6(MolecularGeometry)/src/NewAtomButton.cs" type="Script" id=2]
+[ext_resource path="res://Scenes/Stage6(MolecularGeometry)/src/AtomMaster.cs" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
 
 [node name="NewBond" type="Button" parent="."]
 margin_right = 130.0
 margin_bottom = 62.0
 custom_fonts/font = ExtResource( 1 )
 text = "New Atom"
+script = ExtResource( 2 )
+
+[node name="AtomMaster" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource( 4 )

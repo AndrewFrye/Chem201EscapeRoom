@@ -3,7 +3,7 @@ using Godot;
 
 namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
 {
-    public class SubQuestionMultipleChoiceButton : Common.MultipleChoiceButton
+    public class SubQuestionMultipleChoiceButton : MultipleChoiceButton
     {
         [Export] private string DataGridPath, KeyValue;
         [Export] private int KeyIndex;
@@ -16,10 +16,11 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
         }
 
         private bool valuesAdded = false;
+
         protected override void CorrectResponsePressed()
         {
             if (valuesAdded) return;
-            
+
             var indexLabel = new Label();
             indexLabel.Text = (KeyIndex + 1).ToString();
 
@@ -29,24 +30,20 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
             var row = new HBoxContainer();
             row.AddChild(indexLabel);
             row.AddChild(valueLabel);
-            
+
             DataGrid.AddChild(row);
-            
+
             foreach (HBoxContainer childContainer in DataGrid.GetChildren())
             {
-                int index = -1;
-                int.TryParse(((Label)(childContainer.GetChildren()[0])).Text, out index);
+                var index = -1;
+                int.TryParse(((Label)childContainer.GetChildren()[0]).Text, out index);
                 index--;
-                
+
                 if (index >= 0)
-                {
                     if (DataGrid.GetChildCount() >= index)
-                    {
                         DataGrid.MoveChild(childContainer, index);
-                    }
-                }
             }
-            
+
             valuesAdded = true;
         }
 
@@ -54,11 +51,11 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
         {
             //PopupControls.OpenIncorrectResponsePopup();
             var popup = new Popup();
-            
+
             var popupBox = new VBoxContainer();
             popup.AddChild(popupBox);
             popupBox.Alignment = BoxContainer.AlignMode.Center;
-            
+
             var popupHeader = new Label();
             popupHeader.Text = "Incorrect";
             popupBox.AddChild(popupHeader);
@@ -67,9 +64,8 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
             popupBox.AddChild(closePopupButton);
             closePopupButton.SetScript(ResourceLoader.Load("res://Scenes/Common/ClosePopupButton.cs"));
             //closePopupButton.Text = "Try Again";
-            
+
             popup.ShowModal(true);
-            
         }
     }
 }

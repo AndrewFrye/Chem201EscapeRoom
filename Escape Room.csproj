@@ -1,17 +1,17 @@
 <Project Sdk="Godot.NET.Sdk/3.3.0">
-  <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <RootNamespace>EscapeRoom</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Scenes\Stage3(Main)\" />
-    <Folder Include="Scenes\Stage4(Gases)\" />
-    <Folder Include="Scenes\Stage6(MolecularGeometry)\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Fonts\RichTextEffects\Effects\Subscript.tres" />
-    <Content Include="Resources\Fonts\RichTextEffects\Effects\Superscript.tres" />
-    <Content Include="Resources\Fonts\RichTextEffects\Src\Subscript.gd" />
-    <Content Include="Resources\Fonts\RichTextEffects\Src\Superscript.gd" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <RootNamespace>EscapeRoom</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="Scenes\Stage3(Main)\"/>
+        <Folder Include="Scenes\Stage4(Gases)\src\" />
+        <Folder Include="Scenes\Stage6(MolecularGeometry)\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Resources\Fonts\RichTextEffects\Effects\Subscript.tres"/>
+        <Content Include="Resources\Fonts\RichTextEffects\Effects\Superscript.tres"/>
+        <Content Include="Resources\Fonts\RichTextEffects\Src\Subscript.gd"/>
+        <Content Include="Resources\Fonts\RichTextEffects\Src\Superscript.gd"/>
+    </ItemGroup>
 </Project>

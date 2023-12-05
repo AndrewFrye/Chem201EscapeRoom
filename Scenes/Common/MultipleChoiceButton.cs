@@ -9,13 +9,9 @@ namespace EscapeRoom.Scenes.Common
         public override void _Pressed()
         {
             if (CorrectResponse)
-            {
                 CorrectResponsePressed();
-            }
             else
-            {
                 IncorrectResponsePressed();
-            }
         }
 
         protected abstract void CorrectResponsePressed();

@@ -10,7 +10,7 @@ namespace EscapeRoom.Scenes.Common
             var popup = new Popup();
             var popupBox = new VBoxContainer();
             popupBox.Alignment = BoxContainer.AlignMode.Center;
-            
+
             var popupHeader = new Label();
             popupHeader.Text = "Incorrect";
             popupBox.AddChild(popupHeader);

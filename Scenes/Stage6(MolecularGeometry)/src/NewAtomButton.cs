@@ -1,21 +1,21 @@
 using Godot;
 using System;
 
-public class NewAtomButton : Button
+namespace EscapeRoom.Scenes.Stage6_MolecularGeometry_.src
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public class NewAtomButton : Button
     {
-        
-    }
+        [Signal]
+        public delegate void NewAtomCreated();
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+        public override void _Ready()
+        {
+            Connect("NewAtomCreated", GetNode<AtomMaster>("%AtomMaster"), "CreateNewAtom");
+        }
+
+        public override void _Pressed()
+        {
+            EmitSignal("NewAtomCreated");
+        }
+    }
 }

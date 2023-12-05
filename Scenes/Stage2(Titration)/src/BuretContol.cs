@@ -8,28 +8,28 @@ public class BuretContol : VSlider
     private Sprite flask;
     private float addedVolume;
     [Export] public float targetVolume, tolerance;
-    
+
     public override void _Ready()
     {
         addedVolumeLabel = GetNode<Label>("%AddedBaseVolumeLabel");
         flowRateLabel = GetNode<Label>("%[Debug]BuretFlowRateLabel");
-        
+
 #if RELEASE
         flowRateLabel.Visible = false;
 #endif
-        
+
         flask = GetNode<Sprite>("%TitrationFlask");
 
         addedVolume = 0f;
     }
-    
+
     public override void _Process(float delta)
     {
         //Set the debug label for showing the current flow rate, this will be disabled in the final version
-        flowRateLabel.Text = $"{Math.Round((decimal)this.Value, 5)} mL/s";
+        flowRateLabel.Text = $"{Math.Round((decimal)Value, 5)} mL/s";
 
         //Add the current flow rate to the 
-        addedVolume += (float)this.Value * delta;
+        addedVolume += (float)Value * delta;
         addedVolumeLabel.Text = $"{Math.Round((decimal)addedVolume, 2)} mL";
     }
 
@@ -40,7 +40,7 @@ public class BuretContol : VSlider
         if (variance < targetVolume - tolerance)
         {
             //Make flask clear
-        } 
+        }
         else if (variance > targetVolume + variance)
         {
             //Make flask dark pink
@@ -55,6 +55,6 @@ public class BuretContol : VSlider
     {
         //Reset the added volume and the slider
         addedVolume = 0f;
-        this.Value = 0;
+        Value = 0;
     }
 }

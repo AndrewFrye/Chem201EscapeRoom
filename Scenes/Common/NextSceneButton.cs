@@ -3,8 +3,7 @@ using System;
 
 public class NextSceneButton : Button
 {
-    [Export]
-    public string nextSceneString = "";
+    [Export] public string nextSceneString = "";
 
     public override void _Pressed()
     {

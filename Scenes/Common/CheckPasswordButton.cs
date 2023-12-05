@@ -6,7 +6,7 @@ namespace EscapeRoom.Scenes.Common
     {
         [Export] protected string PasswordInputNodePath;
         [Export] protected string Password;
-        
+
         protected LineEdit passwordInput { get; set; }
 
         protected void Init()
@@ -17,13 +17,9 @@ namespace EscapeRoom.Scenes.Common
         public override void _Pressed()
         {
             if (passwordInput.Text == Password)
-            {
                 onCorrectInput();
-            }
             else
-            {
                 onIncorrectInput();
-            }
         }
 
         protected abstract void onCorrectInput();

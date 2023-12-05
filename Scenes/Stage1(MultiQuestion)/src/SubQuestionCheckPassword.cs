@@ -13,15 +13,16 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
         public override void _Ready()
         {
             Init();
-            
+
             dataGrid = GetNode(dataGridPath) as VBoxContainer;
         }
 
         private bool valuesAdded = false;
+
         protected override void onCorrectInput()
         {
             if (valuesAdded) return;
-            
+
             var indexLabel = new Label();
             indexLabel.Text = (keyIndex + 1).ToString();
 
@@ -43,27 +44,23 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
                 var row2 = new HBoxContainer();
                 row2.AddChild(index2Label);
                 row2.AddChild(value2Label);
-                
+
                 dataGrid.AddChild(row2);
             }
-            
+
             dataGrid.AddChild(row);
 
             foreach (HBoxContainer childContainer in dataGrid.GetChildren())
             {
-                int index = -1;
-                int.TryParse(((Label)(childContainer.GetChildren()[0])).Text, out index);
+                var index = -1;
+                int.TryParse(((Label)childContainer.GetChildren()[0]).Text, out index);
                 index--;
-                
+
                 if (index >= 0)
-                {
                     if (dataGrid.GetChildCount() >= index)
-                    {
                         dataGrid.MoveChild(childContainer, index);
-                    }
-                }
             }
-            
+
             valuesAdded = true;
         }
 
