@@ -8,4 +8,10 @@
     <Folder Include="Scenes\Stage4(Gases)\" />
     <Folder Include="Scenes\Stage6(MolecularGeometry)\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Fonts\RichTextEffects\Effects\Subscript.tres" />
+    <Content Include="Resources\Fonts\RichTextEffects\Effects\Superscript.tres" />
+    <Content Include="Resources\Fonts\RichTextEffects\Src\Subscript.gd" />
+    <Content Include="Resources\Fonts\RichTextEffects\Src\Superscript.gd" />
+  </ItemGroup>
 </Project>

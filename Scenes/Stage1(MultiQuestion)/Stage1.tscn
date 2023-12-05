@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=2]
 [ext_resource path="res://Scenes/Common/CheckPasswordButton.cs" type="Script" id=3]
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionCheckPassword.cs" type="Script" id=4]
+[ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=5]
+[ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -17,10 +19,11 @@ margin_bottom = 579.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
+margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
@@ -70,32 +73,32 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
+margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
 [node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
 unique_name_in_owner = true
-margin_top = 229.0
+margin_top = 225.0
 margin_right = 981.0
-margin_bottom = 254.0
+margin_bottom = 250.0
 rect_min_size = Vector2( 0, 25 )
 align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
-margin_top = 258.0
+margin_top = 254.0
 margin_right = 981.0
-margin_bottom = 272.0
+margin_bottom = 268.0
 text = "What is the anion in table salt (NaCl)? "
 align = 1
 valign = 1
 autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
-margin_top = 276.0
+margin_top = 272.0
 margin_right = 981.0
-margin_bottom = 296.0
+margin_bottom = 292.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q1PasswordInput"
@@ -146,7 +149,6 @@ keyValue = "V"
 keyIndex = 1
 
 [node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -157,24 +159,24 @@ alignment = 1
 
 [node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
 unique_name_in_owner = true
-margin_top = 225.0
+margin_top = 195.0
 margin_right = 981.0
-margin_bottom = 249.0
+margin_bottom = 219.0
 align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q3Container"]
-margin_top = 253.0
+margin_top = 223.0
 margin_right = 981.0
-margin_bottom = 267.0
+margin_bottom = 237.0
 text = "Name of PO4(3-)?"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
-margin_top = 271.0
+margin_top = 241.0
 margin_right = 981.0
-margin_bottom = 291.0
+margin_bottom = 261.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q3PasswordInput"
@@ -184,6 +186,16 @@ keyValue = "A"
 key2Value = "P"
 keyIndex = 4
 key2Index = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SubQuestions/Q3Container"]
+margin_top = 265.0
+margin_right = 981.0
+margin_bottom = 321.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]PO[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3-[/font][/superscript][/center][/font]"
+text = "PO43-"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
 [node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
@@ -226,6 +238,7 @@ keyIndex = 12
 key2Index = 5
 
 [node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
