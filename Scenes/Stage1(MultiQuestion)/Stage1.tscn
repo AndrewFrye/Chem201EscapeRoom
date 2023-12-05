@@ -159,24 +159,25 @@ alignment = 1
 
 [node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
 unique_name_in_owner = true
-margin_top = 195.0
+margin_top = 204.0
 margin_right = 981.0
-margin_bottom = 219.0
+margin_bottom = 228.0
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q3Container"]
-margin_top = 223.0
+[node name="RichTextLabel" type="RichTextLabel" parent="SubQuestions/Q3Container"]
+margin_top = 232.0
 margin_right = 981.0
-margin_bottom = 237.0
-text = "Name of PO4(3-)?"
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 288.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]PO[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3-[/font][/superscript][/center][/font]"
+text = "PO43-"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
-margin_top = 241.0
+margin_top = 292.0
 margin_right = 981.0
-margin_bottom = 261.0
+margin_bottom = 312.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q3PasswordInput"
@@ -186,16 +187,6 @@ keyValue = "A"
 key2Value = "P"
 keyIndex = 4
 key2Index = 6
-
-[node name="RichTextLabel" type="RichTextLabel" parent="SubQuestions/Q3Container"]
-margin_top = 265.0
-margin_right = 981.0
-margin_bottom = 321.0
-bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]PO[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3-[/font][/superscript][/center][/font]"
-text = "PO43-"
-fit_content_height = true
-custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
 [node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Common/CheckPasswordButton.cs" type="Script" id=2]
+[ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/Stage5(ElectronConfiguration)/src/SubQuestionMultipleChoiceButton.cs" type="Script" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -65,7 +67,6 @@ scroll_horizontal_enabled = false
 unique_name_in_owner = true
 
 [node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -75,9 +76,9 @@ margin_bottom = -4.0
 alignment = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
-margin_top = 191.0
+margin_top = 146.0
 margin_right = 981.0
-margin_bottom = 273.0
+margin_bottom = 228.0
 text = "How many valence electrons does Cu+ have?
 m) 1
  o) 2
@@ -89,20 +90,73 @@ autowrap = true
 
 [node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
 unique_name_in_owner = true
-margin_top = 277.0
+margin_top = 232.0
 margin_right = 981.0
-margin_bottom = 302.0
+margin_bottom = 257.0
 rect_min_size = Vector2( 0, 25 )
 align = 1
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
-margin_top = 306.0
+margin_top = 261.0
 margin_right = 981.0
-margin_bottom = 326.0
+margin_bottom = 281.0
 text = "Check"
 script = ExtResource( 2 )
 PasswordInputNodePath = "%Q1PasswordInput"
 Password = "e"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubQuestions/Q1Container"]
+margin_top = 285.0
+margin_right = 981.0
+margin_bottom = 371.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubQuestions/Q1Container/HBoxContainer"]
+margin_left = 455.0
+margin_right = 481.0
+margin_bottom = 86.0
+alignment = 1
+
+[node name="Button" type="Button" parent="SubQuestions/Q1Container/HBoxContainer/VBoxContainer"]
+margin_right = 26.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 3 )
+text = "1"
+script = ExtResource( 4 )
+DataGridPath = "$PasswordKeyContainer"
+KeyValue = "E"
+
+[node name="Button2" type="Button" parent="SubQuestions/Q1Container/HBoxContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 26.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "2"
+script = ExtResource( 4 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SubQuestions/Q1Container/HBoxContainer"]
+margin_left = 485.0
+margin_right = 525.0
+margin_bottom = 86.0
+alignment = 1
+
+[node name="Button3" type="Button" parent="SubQuestions/Q1Container/HBoxContainer/VBoxContainer2"]
+margin_right = 40.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 3 )
+text = "10"
+script = ExtResource( 4 )
+
+[node name="Button4" type="Button" parent="SubQuestions/Q1Container/HBoxContainer/VBoxContainer2"]
+margin_top = 45.0
+margin_right = 40.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "8"
+script = ExtResource( 4 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "E"
 
 [node name="Q2Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
@@ -184,6 +238,7 @@ PasswordInputNodePath = "%Q3PasswordInput"
 Password = "c"
 
 [node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
