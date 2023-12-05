@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-2.png" type="Texture" id=8]
 [ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=9]
+[ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
@@ -28,15 +29,15 @@ bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 10 )
 
 [node name="SubQuestions" type="TabContainer" parent="."]
-margin_left = 7.0
-margin_top = 26.0
-margin_right = 996.0
-margin_bottom = 579.0
+margin_right = 1024.0
+margin_bottom = 600.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -45,8 +46,8 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="QuestionBackground" type="Sprite" parent="SubQuestions/PasswordContainer"]
-position = Vector2( 490.5, 258.5 )
-scale = Vector2( 0.24875, 0.236 )
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
 texture = ExtResource( 8 )
 
 [node name="MasterPasswordText" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
@@ -105,7 +106,6 @@ scroll_horizontal_enabled = false
 unique_name_in_owner = true
 
 [node name="Q1Container" type="Control" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -114,8 +114,8 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q1Container"]
-position = Vector2( 490.5, 258.5 )
-scale = Vector2( 0.24875, 0.236 )
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
 texture = ExtResource( 8 )
 
 [node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/Q1Container"]
