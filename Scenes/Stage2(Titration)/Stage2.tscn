@@ -2,22 +2,24 @@
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=3]
-[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/Common/CheckPasswordButton.cs" type="Script" id=3]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 1 )
+bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 300 )
-scale = Vector2( 0.256, 0.266667 )
+position = Vector2( 510, 300 )
+scale = Vector2( 0.255125, 0.264889 )
 texture = ExtResource( 5 )
 
 [node name="Buret" type="Sprite" parent="."]
@@ -26,7 +28,6 @@ scale = Vector2( 0.651442, 0.555288 )
 texture = ExtResource( 7 )
 
 [node name="Flask" type="Sprite" parent="."]
-unique_name_in_owner = true
 position = Vector2( 321, 408 )
 scale = Vector2( 0.337781, 0.415222 )
 texture = ExtResource( 2 )
@@ -45,6 +46,8 @@ margin_left = 829.0
 margin_top = 172.0
 margin_right = 894.0
 margin_bottom = 202.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
 text = "Reset"
 
 [node name="BuretContol" type="VSlider" parent="."]
@@ -53,11 +56,9 @@ margin_top = 120.0
 margin_right = 870.0
 margin_bottom = 400.0
 rect_rotation = 90.0
-max_value = 0.1
+max_value = 0.05
 step = 0.0
 script = ExtResource( 1 )
-targetVolume = 4.6
-tolerance = 0.05
 
 [node name="BuretControlLabel" type="Label" parent="."]
 margin_left = 563.0
@@ -96,44 +97,17 @@ margin_right = 780.0
 margin_bottom = 510.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
 text = "Check"
 script = ExtResource( 3 )
-PasswordInputNodePath = "%PasswordInput"
-Password = "4.6"
-NextScenePopupPath = "%NextScenePopup"
-IncorrectResponsePopupPath = "%IncorrectResponsePopup"
+PasswordInputNodePath = "/root/Control/PasswordInput"
+Password = "12.4"
 
-[node name="PasswordInput" type="LineEdit" parent="."]
-unique_name_in_owner = true
+[node name="PasswordInput" type="TextEdit" parent="."]
 margin_left = 550.0
 margin_top = 358.0
 margin_right = 850.0
 margin_bottom = 398.0
 custom_fonts/font = ExtResource( 6 )
-
-[node name="IncorrectResponsePopup" type="WindowDialog" parent="."]
-unique_name_in_owner = true
-margin_right = 48.0
-margin_bottom = 40.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="IncorrectResponsePopup"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="NextScenePopup" type="WindowDialog" parent="."]
-unique_name_in_owner = true
-margin_left = 164.0
-margin_top = 251.0
-margin_right = 289.0
-margin_bottom = 301.0
-
-[node name="NextSceneButton" type="Button" parent="NextScenePopup"]
-margin_right = 125.0
-margin_bottom = 50.0
-custom_fonts/font = ExtResource( 6 )
-text = "Continue"
-script = ExtResource( 4 )
-nextSceneString = "res://Scenes/Stage4(Gases)/Stage4.tscn"
 
 [connection signal="pressed" from="ResetButton" to="BuretContol" method="_on_ResetButton_pressed"]
