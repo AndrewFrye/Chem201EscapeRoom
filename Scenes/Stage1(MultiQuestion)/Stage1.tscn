@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=6]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-2.png" type="Texture" id=8]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
@@ -35,20 +36,23 @@ margin_right = 996.0
 margin_bottom = 579.0
 script = ExtResource( 1 )
 
-[node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
-visible = false
+[node name="PasswordContainer" type="Control" parent="SubQuestions"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/PasswordContainer"]
+position = Vector2( 490.5, 258.5 )
+scale = Vector2( 0.24875, 0.236 )
+texture = ExtResource( 8 )
 
 [node name="MasterPasswordText" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
-margin_top = 130.0
+margin_top = 100.0
 margin_right = 981.0
-margin_bottom = 166.0
+margin_bottom = 150.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans25.tres][center]Please Enter Password:[/center][/font]"
 text = "Please Enter Password:"
@@ -65,9 +69,10 @@ margin_bottom = 184.0
 
 [node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
 unique_name_in_owner = true
-margin_top = 188.0
-margin_right = 981.0
-margin_bottom = 233.0
+margin_left = 80.0
+margin_top = 250.0
+margin_right = 900.0
+margin_bottom = 295.0
 rect_min_size = Vector2( 0, 25 )
 custom_fonts/font = ExtResource( 7 )
 align = 1
@@ -78,9 +83,10 @@ margin_right = 981.0
 margin_bottom = 251.0
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 255.0
-margin_right = 981.0
-margin_bottom = 269.0
+margin_left = 18.0
+margin_top = 308.0
+margin_right = 999.0
+margin_bottom = 322.0
 text = "| 12 | space | 2 | 3 | 1 | 11 | space | 5 | 14 | 4 | 6 | 11 | space | 15 | 2 | 4 | 1 | 3 | 14 | 11 | space | 9 | 13 | 14 | 4 | 7 | 3 | 10 | 8 |"
 align = 1
 valign = 1
@@ -92,10 +98,13 @@ margin_right = 981.0
 margin_bottom = 287.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
-margin_top = 291.0
-margin_right = 981.0
-margin_bottom = 332.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "%PasswordInput"
@@ -364,6 +373,7 @@ keyIndex = 12
 key2Index = 5
 
 [node name="Q5Container" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -424,7 +434,7 @@ dataGridPath = "%PasswordKeyContainer"
 keyValue = "F"
 keyIndex = 15
 
-[node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q6Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -432,7 +442,6 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
 
 [node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q6Container"]
 position = Vector2( 490.5, 258.5 )
@@ -440,9 +449,9 @@ scale = Vector2( 0.24875, 0.236 )
 texture = ExtResource( 8 )
 
 [node name="Q6Hint" type="RichTextLabel" parent="SubQuestions/Q6Container"]
-margin_top = 165.0
+margin_top = 90.0
 margin_right = 981.0
-margin_bottom = 221.0
+margin_bottom = 163.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Which element with a 3[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript] has 36 electrons?[/center][/font]"
 text = "Which element with a 3+ has 36 electrons?"
@@ -450,28 +459,32 @@ fit_content_height = true
 custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
 [node name="Spacer1" type="Label" parent="SubQuestions/Q6Container"]
-margin_top = 225.0
+margin_top = 228.0
 margin_right = 981.0
-margin_bottom = 239.0
+margin_bottom = 242.0
 
 [node name="Q6PasswordInput" type="LineEdit" parent="SubQuestions/Q6Container"]
 unique_name_in_owner = true
-margin_top = 243.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 300.0
+margin_right = 740.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 
 [node name="Spacer2" type="Label" parent="SubQuestions/Q6Container"]
-margin_top = 292.0
+margin_top = 295.0
 margin_right = 981.0
-margin_bottom = 306.0
+margin_bottom = 309.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q6Container"]
-margin_top = 310.0
-margin_right = 981.0
-margin_bottom = 351.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q6PasswordInput"
@@ -480,7 +493,7 @@ dataGridPath = "%PasswordKeyContainer"
 keyValue = "Y"
 keyIndex = 7
 
-[node name="Q7Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q7Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -488,15 +501,21 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q7Container"]
+position = Vector2( 490.5, 258.5 )
+scale = Vector2( 0.24875, 0.236 )
+texture = ExtResource( 8 )
 
 [node name="Q7Hint" type="RichTextLabel" parent="SubQuestions/Q7Container"]
-margin_top = 165.0
+margin_top = 60.0
 margin_right = 981.0
-margin_bottom = 221.0
+margin_bottom = 172.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What transition metal has a constant charge of 1[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript][/center][/font]"
-text = "What transition metal has a constant charge of 1+"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What transition metal has a constant
+charge of 1[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript][/center][/font]"
+text = "What transition metal has a constant
+charge of 1+"
 fit_content_height = true
 custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
@@ -507,9 +526,10 @@ margin_bottom = 239.0
 
 [node name="Q7PasswordInput" type="LineEdit" parent="SubQuestions/Q7Container"]
 unique_name_in_owner = true
-margin_top = 243.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 300.0
+margin_right = 740.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 
@@ -519,10 +539,13 @@ margin_right = 981.0
 margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q7Container"]
-margin_top = 310.0
-margin_right = 981.0
-margin_bottom = 351.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q7PasswordInput"
@@ -533,7 +556,7 @@ key2Value = "E"
 keyIndex = 8
 key2Index = 11
 
-[node name="Q8Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q8Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -541,12 +564,16 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q8Container"]
+position = Vector2( 490.5, 258.5 )
+scale = Vector2( 0.24875, 0.236 )
+texture = ExtResource( 8 )
 
 [node name="Q8Hint" type="RichTextLabel" parent="SubQuestions/Q8Container"]
-margin_top = 165.0
+margin_top = 90.0
 margin_right = 981.0
-margin_bottom = 221.0
+margin_bottom = 165.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the chemical name for water?[/center][/font]"
 text = "What is the chemical name for water?"
@@ -560,9 +587,10 @@ margin_bottom = 239.0
 
 [node name="Q8PasswordInput" type="LineEdit" parent="SubQuestions/Q8Container"]
 unique_name_in_owner = true
-margin_top = 243.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 300.0
+margin_right = 740.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 
@@ -572,10 +600,13 @@ margin_right = 981.0
 margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q8Container"]
-margin_top = 310.0
-margin_right = 981.0
-margin_bottom = 351.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q8PasswordInput"
@@ -586,7 +617,7 @@ key2Value = "D"
 keyIndex = 3
 key2Index = 9
 
-[node name="Q9Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q9Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -594,15 +625,21 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q9Container"]
+position = Vector2( 490.5, 258.5 )
+scale = Vector2( 0.24875, 0.236 )
+texture = ExtResource( 8 )
 
 [node name="Q9Hint" type="RichTextLabel" parent="SubQuestions/Q9Container"]
-margin_top = 165.0
+margin_top = 60.0
 margin_right = 981.0
-margin_bottom = 221.0
+margin_bottom = 155.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the element with 50 protons?[/center][/font]"
-text = "What is the name of the element with 50 protons?"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the element
+with 50 protons?[/center][/font]"
+text = "What is the name of the element
+with 50 protons?"
 fit_content_height = true
 custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
@@ -613,9 +650,10 @@ margin_bottom = 239.0
 
 [node name="Q9PasswordInput" type="LineEdit" parent="SubQuestions/Q9Container"]
 unique_name_in_owner = true
-margin_top = 243.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 300.0
+margin_right = 740.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 
@@ -625,10 +663,13 @@ margin_right = 981.0
 margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q9Container"]
-margin_top = 310.0
-margin_right = 981.0
-margin_bottom = 351.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q9PasswordInput"
@@ -637,7 +678,7 @@ dataGridPath = "%PasswordKeyContainer"
 keyValue = "N"
 keyIndex = 10
 
-[node name="Q10Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q10Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -645,15 +686,21 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q10Container"]
+position = Vector2( 490.5, 258.5 )
+scale = Vector2( 0.24875, 0.236 )
+texture = ExtResource( 8 )
 
 [node name="Q10Hint" type="RichTextLabel" parent="SubQuestions/Q10Container"]
-margin_top = 165.0
+margin_top = 60.0
 margin_right = 981.0
-margin_bottom = 221.0
+margin_bottom = 182.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the chemical compound C[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3[/font][/subscript]H[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]8[/font][/subscript][/center][/font]"
-text = "What is the name of the chemical compound C3H8"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the chemical
+compound C[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3[/font][/subscript]H[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]8[/font][/subscript][/center][/font]"
+text = "What is the name of the chemical
+compound C3H8"
 fit_content_height = true
 custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
@@ -664,9 +711,10 @@ margin_bottom = 239.0
 
 [node name="Q10PasswordInput" type="LineEdit" parent="SubQuestions/Q10Container"]
 unique_name_in_owner = true
-margin_top = 243.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_left = 240.0
+margin_top = 300.0
+margin_right = 740.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 7 )
 align = 1
 
@@ -676,10 +724,13 @@ margin_right = 981.0
 margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q10Container"]
-margin_top = 310.0
-margin_right = 981.0
-margin_bottom = 351.0
+margin_left = 415.0
+margin_top = 380.0
+margin_right = 565.0
+margin_bottom = 425.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q10PasswordInput"
