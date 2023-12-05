@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=3]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=4]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 510, 300 )
-scale = Vector2( 0.255125, 0.264889 )
+position = Vector2( 512, 300 )
+scale = Vector2( 0.256, 0.266667 )
 texture = ExtResource( 5 )
 
 [node name="Buret" type="Sprite" parent="."]
@@ -99,7 +99,7 @@ margin_right = 780.0
 margin_bottom = 510.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = ExtResource( 4 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "%PasswordInput"

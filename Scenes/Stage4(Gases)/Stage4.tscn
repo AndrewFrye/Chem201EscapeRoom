@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Stage4(Gases)/src/InfoButtonBase.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=2]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=3]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=6]
+[ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=8]
+[ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
@@ -18,6 +22,7 @@ bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 9 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 512, 299.75 )
@@ -109,6 +114,38 @@ fit_content_height = true
 scroll_active = false
 custom_effects = [ ExtResource( 3 ), ExtResource( 2 ) ]
 
+[node name="PasswordEntryPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_left = 44.0
+margin_top = 198.0
+margin_right = 419.0
+margin_bottom = 348.0
+grow_horizontal = 2
+grow_vertical = 2
+popup_exclusive = true
+
+[node name="PasswordInput" type="LineEdit" parent="PasswordEntryPopup"]
+unique_name_in_owner = true
+margin_left = -2.0
+margin_top = 20.0
+margin_right = 373.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 4 )
+
+[node name="CheckPassword" type="Button" parent="PasswordEntryPopup"]
+margin_top = 69.0
+margin_right = 375.0
+margin_bottom = 83.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = ExtResource( 6 )
+text = "Check"
+script = ExtResource( 7 )
+PasswordInputNodePath = "%PasswordInput"
+Password = "438.16"
+NextScenePopupPath = "%CorrectPopup"
+IncorrectResponsePopupPath = "%IncorrectPopup"
+
 [node name="Label" type="Label" parent="."]
 margin_left = 460.0
 margin_top = 61.0
@@ -160,3 +197,46 @@ custom_styles/normal = SubResource( 3 )
 text = "Look at Pressure Gauge"
 script = ExtResource( 1 )
 PopupPath = "%PressureGaugePopup"
+
+[node name="PasswordButton" type="Button" parent="."]
+margin_left = 534.0
+margin_top = 526.0
+margin_right = 884.0
+margin_bottom = 576.0
+rect_min_size = Vector2( 350, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 3 )
+text = "Open Password Input"
+script = ExtResource( 1 )
+PopupPath = "%PasswordEntryPopup"
+
+[node name="IncorrectPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_right = 250.0
+margin_bottom = 75.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IncorrectPopup"]
+margin_right = 250.0
+margin_bottom = 75.0
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Incorrect Code
+Check your rounding[/center]"
+text = "Incorrect Code
+Check your rounding"
+fit_content_height = true
+scroll_active = false
+
+[node name="CorrectPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_right = 125.0
+margin_bottom = 50.0
+
+[node name="NextScene" type="Button" parent="CorrectPopup"]
+margin_right = 125.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 4 )
+text = "Continue"
+script = ExtResource( 8 )
+nextSceneString = "res://Scenes/Stage5(ElectronConfiguration)/Stage5.tscn"

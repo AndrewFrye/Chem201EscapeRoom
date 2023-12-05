@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://Scenes/Stage5(ElectronConfiguration)/src/SubQuestionMultipleChoiceButton.cs" type="Script" id=4]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=5]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=6]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=8]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 
 [node name="SubQuestions" type="TabContainer" parent="."]
 anchor_right = 1.0
@@ -747,3 +750,5 @@ margin_right = 125.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 3 )
 text = "Continue"
+script = ExtResource( 7 )
+nextSceneString = "res://Scenes/Stage6(MolecularGeometry)/Stage6.tscn"
