@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -40,6 +46,8 @@ margin_left = 829.0
 margin_top = 172.0
 margin_right = 894.0
 margin_bottom = 202.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 1 )
 text = "Reset"
 
 [node name="BuretContol" type="VSlider" parent="."]
@@ -87,7 +95,9 @@ margin_left = 620.0
 margin_top = 450.0
 margin_right = 780.0
 margin_bottom = 510.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
+custom_styles/normal = SubResource( 2 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "/root/Control/PasswordInput"
