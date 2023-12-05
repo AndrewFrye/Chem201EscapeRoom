@@ -17,6 +17,7 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -25,40 +26,64 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Label" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 212.0
-margin_right = 1016.0
-margin_bottom = 226.0
-text = "The Password Is:"
-align = 1
+[node name="MasterPasswordText" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
+margin_top = 151.0
+margin_right = 981.0
+margin_bottom = 187.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans25.tres][center]Please Enter Password:[/center][/font]"
+text = "Please Enter Password:"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Spacer1" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 205.0
 
 [node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
-margin_top = 230.0
-margin_right = 1016.0
-margin_bottom = 255.0
+unique_name_in_owner = true
+margin_top = 209.0
+margin_right = 981.0
+margin_bottom = 234.0
 rect_min_size = Vector2( 0, 25 )
 align = 1
 
+[node name="Spacer2" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 238.0
+margin_right = 981.0
+margin_bottom = 252.0
+
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 259.0
-margin_right = 1016.0
-margin_bottom = 273.0
-text = "| 12 | 2 | 3 | 1 | 11 | 5 | 14 | 4 | 6 | 11 | 15 | 2 | 4 | 1 |3 | 14 | 1| 1 | 9 |13|14 | 4 | 7 | 3 | 10 | 8 |"
+margin_top = 256.0
+margin_right = 981.0
+margin_bottom = 270.0
+text = "| 12 | space | 2 | 3 | 1 | 11 | space | 5 | 14 | 4 | 6 | 11 | space | 15 | 2 | 4 | 1 | 3 | 14 | 11 | space | 9 | 13 | 14 | 4 | 7 | 3 | 10 | 8 |"
 align = 1
 valign = 1
 autowrap = true
 
+[node name="Spacer3" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 274.0
+margin_right = 981.0
+margin_bottom = 288.0
+
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
-margin_top = 277.0
-margin_right = 1016.0
-margin_bottom = 297.0
+margin_top = 292.0
+margin_right = 981.0
+margin_bottom = 312.0
 text = "Check"
 script = ExtResource( 3 )
+PasswordInputNodePath = "%PasswordInput"
+Password = "I LOVE GRAPE FLAVORED CRAYONS"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_top = 301.0
-margin_right = 1016.0
-margin_bottom = 351.0
+margin_top = 316.0
+margin_right = 981.0
+margin_bottom = 366.0
 rect_min_size = Vector2( 100, 50 )
 scroll_horizontal_enabled = false
 
@@ -75,27 +100,43 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
+[node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/Q1Container"]
+margin_top = 186.0
+margin_right = 981.0
+margin_bottom = 242.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the anion in table salt?[/center][/font]"
+text = "What is the anion in table salt?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q1Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
+
 [node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
 unique_name_in_owner = true
-margin_top = 225.0
+margin_top = 264.0
 margin_right = 981.0
-margin_bottom = 250.0
+margin_bottom = 289.0
 rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
-margin_top = 254.0
+[node name="Spacer2" type="Label" parent="SubQuestions/Q1Container"]
+margin_top = 293.0
 margin_right = 981.0
-margin_bottom = 268.0
-text = "What is the anion in table salt (NaCl)? "
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 307.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
-margin_top = 272.0
+margin_top = 311.0
 margin_right = 981.0
-margin_bottom = 292.0
+margin_bottom = 331.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q1PasswordInput"
@@ -116,27 +157,43 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
+[node name="Q2Hint" type="RichTextLabel" parent="SubQuestions/Q2Container"]
+margin_top = 186.0
+margin_right = 981.0
+margin_bottom = 242.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What element has an atomic weight of 50.94?[/center][/font]"
+text = "What element has an atomic weight of 50.94?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q2Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
+
 [node name="Q2PasswordInput" type="LineEdit" parent="SubQuestions/Q2Container"]
 unique_name_in_owner = true
-margin_top = 225.0
+margin_top = 264.0
 margin_right = 981.0
-margin_bottom = 250.0
+margin_bottom = 289.0
 rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q2Container"]
-margin_top = 254.0
+[node name="Spacer2" type="Label" parent="SubQuestions/Q2Container"]
+margin_top = 293.0
 margin_right = 981.0
-margin_bottom = 268.0
-text = "What atom has the atomic weight: 50.94?"
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 307.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q2Container"]
-margin_top = 272.0
+margin_top = 311.0
 margin_right = 981.0
-margin_bottom = 292.0
+margin_bottom = 331.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q2PasswordInput"
@@ -155,27 +212,39 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
-unique_name_in_owner = true
-margin_top = 204.0
+[node name="Q3Hint" type="RichTextLabel" parent="SubQuestions/Q3Container"]
+margin_top = 186.0
 margin_right = 981.0
-margin_bottom = 228.0
-align = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="SubQuestions/Q3Container"]
-margin_top = 232.0
-margin_right = 981.0
-margin_bottom = 288.0
+margin_bottom = 242.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]PO[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3-[/font][/superscript][/center][/font]"
-text = "PO43-"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of PO[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3-[/font][/superscript][/center][/font]"
+text = "What is the name of PO43-"
 fit_content_height = true
 custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
 
-[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
+[node name="Spacer1" type="Label" parent="SubQuestions/Q3Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
+
+[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
+unique_name_in_owner = true
+margin_top = 264.0
+margin_right = 981.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
+align = 1
+
+[node name="Spacer2" type="Label" parent="SubQuestions/Q3Container"]
 margin_top = 292.0
 margin_right = 981.0
-margin_bottom = 312.0
+margin_bottom = 306.0
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
+margin_top = 310.0
+margin_right = 981.0
+margin_bottom = 330.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q3PasswordInput"
@@ -196,26 +265,39 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
+[node name="Q4Hint" type="RichTextLabel" parent="SubQuestions/Q4Container"]
+margin_top = 186.0
+margin_right = 981.0
+margin_bottom = 242.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of Br[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3[/font][/subscript]O[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]4[/font][/subscript][/center][/font]"
+text = "What is the name of Br3O4"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q4Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
+
 [node name="Q4PasswordInput" type="LineEdit" parent="SubQuestions/Q4Container"]
 unique_name_in_owner = true
-margin_top = 225.0
+margin_top = 264.0
 margin_right = 981.0
-margin_bottom = 249.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q4Container"]
-margin_top = 253.0
+[node name="Spacer2" type="Label" parent="SubQuestions/Q4Container"]
+margin_top = 292.0
 margin_right = 981.0
-margin_bottom = 267.0
-text = "Name of Br3O4?"
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q4Container"]
-margin_top = 271.0
+margin_top = 310.0
 margin_right = 981.0
-margin_bottom = 291.0
+margin_bottom = 330.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q4PasswordInput"
@@ -236,26 +318,42 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
+[node name="Q5Hint" type="RichTextLabel" parent="SubQuestions/Q5Container"]
+margin_top = 186.0
+margin_right = 981.0
+margin_bottom = 242.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the period 2 halogen?[/center][/font]"
+text = "What is the period 2 halogen?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q5Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
+
 [node name="Q5PasswordInput" type="LineEdit" parent="SubQuestions/Q5Container"]
 unique_name_in_owner = true
-margin_top = 225.0
+margin_top = 264.0
 margin_right = 981.0
-margin_bottom = 249.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q5Container"]
-margin_top = 254.0
+[node name="Spacer2" type="Label" parent="SubQuestions/Q5Container"]
+margin_top = 292.0
 margin_right = 981.0
-margin_bottom = 268.0
-text = "What is the halogen in period 2?"
-align = 1
-valign = 1
-autowrap = true
+margin_bottom = 306.0
 
 [node name="CheckpasswordButton" type="Button" parent="SubQuestions/Q5Container"]
-margin_top = 271.0
+margin_top = 310.0
 margin_right = 981.0
-margin_bottom = 291.0
+margin_bottom = 330.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q5PasswordInput"
@@ -266,28 +364,47 @@ keyIndex = 15
 
 [node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
+
+[node name="Q6Hint" type="RichTextLabel" parent="SubQuestions/Q6Container"]
+margin_top = 186.0
+margin_right = 981.0
+margin_bottom = 242.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Which element with a 3[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript] has 36 electrons?[/center][/font]"
+text = "Which element with a 3+ has 36 electrons?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q6Container"]
+margin_top = 246.0
+margin_right = 981.0
+margin_bottom = 260.0
 
 [node name="Q6PasswordInput" type="LineEdit" parent="SubQuestions/Q6Container"]
 unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
+margin_top = 264.0
+margin_right = 981.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q6Container"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Which element with a 3+ has 36 electrons?"
-align = 1
-valign = 1
-autowrap = true
+[node name="Spacer2" type="Label" parent="SubQuestions/Q6Container"]
+margin_top = 292.0
+margin_right = 981.0
+margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q6Container"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_top = 310.0
+margin_right = 981.0
+margin_bottom = 330.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q6PasswordInput"
@@ -298,28 +415,47 @@ keyIndex = 7
 
 [node name="Q7Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
+
+[node name="Q7Hint" type="RichTextLabel" parent="SubQuestions/Q7Container"]
+margin_top = 165.0
+margin_right = 981.0
+margin_bottom = 221.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What transition metal has a constant charge of 1[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript][/center][/font]"
+text = "What transition metal has a constant charge of 1+"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q7Container"]
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 239.0
 
 [node name="Q7PasswordInput" type="LineEdit" parent="SubQuestions/Q7Container"]
 unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
+margin_top = 243.0
+margin_right = 981.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q7Container"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "What transition metal has a constant charge of 1+?"
-align = 1
-valign = 1
-autowrap = true
+[node name="Spacer2" type="Label" parent="SubQuestions/Q7Container"]
+margin_top = 292.0
+margin_right = 981.0
+margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q7Container"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_top = 310.0
+margin_right = 981.0
+margin_bottom = 351.0
+custom_fonts/font = ExtResource( 7 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q7PasswordInput"
@@ -332,24 +468,41 @@ key2Index = 11
 
 [node name="Q8Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
+
+[node name="Q8Hint" type="RichTextLabel" parent="SubQuestions/Q8Container"]
+margin_top = 165.0
+margin_right = 981.0
+margin_bottom = 221.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the chemical name for water?[/center][/font]"
+text = "What is the chemical name for water?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q8Container"]
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 239.0
 
 [node name="Q8PasswordInput" type="LineEdit" parent="SubQuestions/Q8Container"]
 unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
+margin_top = 243.0
+margin_right = 981.0
+margin_bottom = 288.0
+custom_fonts/font = ExtResource( 7 )
 align = 1
 
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q8Container"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = " What is the proper molecular name for water?"
-align = 1
-valign = 1
-autowrap = true
+[node name="Spacer2" type="Label" parent="SubQuestions/Q8Container"]
+margin_top = 292.0
+margin_right = 981.0
+margin_bottom = 306.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q8Container"]
 margin_right = 12.0
@@ -370,6 +523,21 @@ margin_top = 24.0
 margin_right = 40.0
 margin_bottom = 40.0
 alignment = 1
+
+[node name="Q9Hint" type="RichTextLabel" parent="SubQuestions/Q9Container"]
+margin_top = 165.0
+margin_right = 981.0
+margin_bottom = 221.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the element with 50 protons?[/center][/font]"
+text = "What is the name of the element with 50 protons?"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q9Container"]
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 239.0
 
 [node name="Q9PasswordInput" type="LineEdit" parent="SubQuestions/Q9Container"]
 unique_name_in_owner = true
@@ -402,6 +570,21 @@ margin_top = 24.0
 margin_right = 40.0
 margin_bottom = 40.0
 alignment = 1
+
+[node name="Q10Hint" type="RichTextLabel" parent="SubQuestions/Q10Container"]
+margin_top = 165.0
+margin_right = 981.0
+margin_bottom = 221.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the name of the chemical compound C[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]3[/font][/subscript]H[subscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]8[/font][/subscript][/center][/font]"
+text = "What is the name of the chemical compound C3H8"
+fit_content_height = true
+custom_effects = [ ExtResource( 6 ), ExtResource( 5 ) ]
+
+[node name="Spacer1" type="Label" parent="SubQuestions/Q10Container"]
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 239.0
 
 [node name="Q10PasswordInput" type="LineEdit" parent="SubQuestions/Q10Container"]
 unique_name_in_owner = true
