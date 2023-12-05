@@ -14,11 +14,7 @@ public class BuretContol : VSlider
         addedVolumeLabel = GetNode<Label>("%AddedBaseVolumeLabel");
         flowRateLabel = GetNode<Label>("%[Debug]BuretFlowRateLabel");
 
-#if RELEASE
-        flowRateLabel.Visible = false;
-#endif
-
-        flask = GetNode<Sprite>("%TitrationFlask");
+        flask = GetNode<Sprite>("%Flask");
 
         addedVolume = 0f;
     }
@@ -31,23 +27,25 @@ public class BuretContol : VSlider
         //Add the current flow rate to the 
         addedVolume += (float)Value * delta;
         addedVolumeLabel.Text = $"{Math.Round((decimal)addedVolume, 2)} mL";
+        
+        changeFlaskSprite();
     }
 
     public void changeFlaskSprite()
     {
         var variance = addedVolume - targetVolume;
 
-        if (variance < targetVolume - tolerance)
+        if (addedVolume <= targetVolume + tolerance && addedVolume >= targetVolume - tolerance)
         {
-            //Make flask clear
+            flask.Texture = ResourceLoader.Load<Texture>("res://Scenes/Stage2(Titration)/sprites/SlightlyPinkFlask.png");
         }
-        else if (variance > targetVolume + variance)
+        else if (variance < tolerance)
         {
-            //Make flask dark pink
+            flask.Texture = ResourceLoader.Load<Texture>("res://Scenes/Stage2(Titration)/sprites/ClearFlask.png");
         }
-        else
+        else if (variance > tolerance)
         {
-            //Make flask faint pink
+            flask.Texture = ResourceLoader.Load<Texture>("res://Scenes/Stage2(Titration)/sprites/VeryPinkFlask.png");
         }
     }
 

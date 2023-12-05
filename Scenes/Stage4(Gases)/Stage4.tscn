@@ -56,17 +56,13 @@ margin_bottom = 150.0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ThermometerPopup/Container"]
-margin_top = 21.0
+margin_top = 57.0
 margin_right = 375.0
-margin_bottom = 129.0
+margin_bottom = 93.0
 custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]Plexiglass Box
-Dimensions: 0.5m x 0.5m x 1m
-Contents: Chlorine Gas[/center]"
-text = "Plexiglass Box
-Dimensions: 0.5m x 0.5m x 1m
-Contents: Chlorine Gas"
+bbcode_text = "[center]Temprature: 30° C[/center]"
+text = "Temprature: 30° C"
 fit_content_height = true
 scroll_active = false
 custom_effects = [ ExtResource( 3 ), ExtResource( 2 ) ]
@@ -87,17 +83,13 @@ margin_bottom = 150.0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PressureGaugePopup/Container"]
-margin_top = 21.0
+margin_top = 57.0
 margin_right = 375.0
-margin_bottom = 129.0
+margin_bottom = 93.0
 custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]Plexiglass Box
-Dimensions: 0.5m x 0.5m x 1m
-Contents: Chlorine Gas[/center]"
-text = "Plexiglass Box
-Dimensions: 0.5m x 0.5m x 1m
-Contents: Chlorine Gas"
+bbcode_text = "[center]Pressure 1.23 atm[/center]"
+text = "Pressure 1.23 atm"
 fit_content_height = true
 scroll_active = false
 custom_effects = [ ExtResource( 3 ), ExtResource( 2 ) ]
