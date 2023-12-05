@@ -20,7 +20,7 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
+margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
@@ -70,32 +70,32 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
+margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
-unique_name_in_owner = true
-margin_top = 229.0
-margin_right = 981.0
-margin_bottom = 254.0
-rect_min_size = Vector2( 0, 25 )
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
-margin_top = 258.0
+margin_top = 254.0
 margin_right = 981.0
-margin_bottom = 272.0
+margin_bottom = 268.0
 text = "What is the anion in table salt (NaCl)? "
 align = 1
 valign = 1
 autowrap = true
 
-[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
-margin_top = 276.0
+[node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
+unique_name_in_owner = true
+margin_top = 225.0
 margin_right = 981.0
-margin_bottom = 296.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
+margin_top = 272.0
+margin_right = 981.0
+margin_bottom = 292.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q1PasswordInput"
@@ -116,14 +116,6 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q2PasswordInput" type="LineEdit" parent="SubQuestions/Q2Container"]
-unique_name_in_owner = true
-margin_top = 225.0
-margin_right = 981.0
-margin_bottom = 250.0
-rect_min_size = Vector2( 0, 25 )
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q2Container"]
 margin_top = 254.0
 margin_right = 981.0
@@ -132,6 +124,14 @@ text = "What atom has the atomic weight: 50.94?"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Q2PasswordInput" type="LineEdit" parent="SubQuestions/Q2Container"]
+unique_name_in_owner = true
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q2Container"]
 margin_top = 272.0
@@ -155,13 +155,6 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
-unique_name_in_owner = true
-margin_top = 225.0
-margin_right = 981.0
-margin_bottom = 249.0
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q3Container"]
 margin_top = 253.0
 margin_right = 981.0
@@ -170,6 +163,13 @@ text = "Name of PO4(3-)?"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
+unique_name_in_owner = true
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 249.0
+align = 1
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
 margin_top = 271.0
@@ -195,13 +195,6 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
-[node name="Q4PasswordInput" type="LineEdit" parent="SubQuestions/Q4Container"]
-unique_name_in_owner = true
-margin_top = 225.0
-margin_right = 981.0
-margin_bottom = 249.0
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q4Container"]
 margin_top = 253.0
 margin_right = 981.0
@@ -210,6 +203,13 @@ text = "Name of Br3O4?"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Q4PasswordInput" type="LineEdit" parent="SubQuestions/Q4Container"]
+unique_name_in_owner = true
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 249.0
+align = 1
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q4Container"]
 margin_top = 271.0
@@ -226,6 +226,7 @@ keyIndex = 12
 key2Index = 5
 
 [node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -234,21 +235,21 @@ margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
 
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q5Container"]
+margin_top = 253.0
+margin_right = 981.0
+margin_bottom = 267.0
+text = "What is the halogen in period 2?"
+align = 1
+valign = 1
+autowrap = true
+
 [node name="Q5PasswordInput" type="LineEdit" parent="SubQuestions/Q5Container"]
 unique_name_in_owner = true
 margin_top = 225.0
 margin_right = 981.0
 margin_bottom = 249.0
 align = 1
-
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q5Container"]
-margin_top = 254.0
-margin_right = 981.0
-margin_bottom = 268.0
-text = "What is the halogen in period 2?"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="CheckpasswordButton" type="Button" parent="SubQuestions/Q5Container"]
 margin_top = 271.0
@@ -264,28 +265,34 @@ keyIndex = 15
 
 [node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
 
-[node name="Q6PasswordInput" type="LineEdit" parent="SubQuestions/Q6Container"]
-unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q6Container"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 253.0
+margin_right = 981.0
+margin_bottom = 267.0
 text = "Which element with a 3+ has 36 electrons?"
 align = 1
 valign = 1
 autowrap = true
 
+[node name="Q6PasswordInput" type="LineEdit" parent="SubQuestions/Q6Container"]
+unique_name_in_owner = true
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 249.0
+align = 1
+
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q6Container"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_top = 271.0
+margin_right = 981.0
+margin_bottom = 291.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q6PasswordInput"
@@ -296,28 +303,34 @@ keyIndex = 7
 
 [node name="Q7Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
 
-[node name="Q7PasswordInput" type="LineEdit" parent="SubQuestions/Q7Container"]
-unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q7Container"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 253.0
+margin_right = 981.0
+margin_bottom = 267.0
 text = "What transition metal has a constant charge of 1+?"
 align = 1
 valign = 1
 autowrap = true
 
+[node name="Q7PasswordInput" type="LineEdit" parent="SubQuestions/Q7Container"]
+unique_name_in_owner = true
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 249.0
+align = 1
+
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q7Container"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_top = 271.0
+margin_right = 981.0
+margin_bottom = 291.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q7PasswordInput"
@@ -330,28 +343,34 @@ key2Index = 11
 
 [node name="Q8Container" type="VBoxContainer" parent="SubQuestions"]
 visible = false
-margin_top = 24.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 alignment = 1
 
-[node name="Q8PasswordInput" type="LineEdit" parent="SubQuestions/Q8Container"]
-unique_name_in_owner = true
-margin_right = 58.0
-margin_bottom = 24.0
-align = 1
-
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q8Container"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 225.0
+margin_right = 981.0
+margin_bottom = 239.0
 text = " What is the proper molecular name for water?"
 align = 1
 valign = 1
 autowrap = true
 
+[node name="Q8PasswordInput" type="LineEdit" parent="SubQuestions/Q8Container"]
+unique_name_in_owner = true
+margin_top = 243.0
+margin_right = 981.0
+margin_bottom = 267.0
+align = 1
+
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q8Container"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_top = 271.0
+margin_right = 981.0
+margin_bottom = 291.0
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q8PasswordInput"
@@ -369,19 +388,19 @@ margin_right = 40.0
 margin_bottom = 40.0
 alignment = 1
 
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q9Container"]
+margin_right = 40.0
+margin_bottom = 167.0
+text = "What is the name of the element with 50 protons?"
+align = 1
+valign = 1
+autowrap = true
+
 [node name="Q9PasswordInput" type="LineEdit" parent="SubQuestions/Q9Container"]
 unique_name_in_owner = true
 margin_right = 58.0
 margin_bottom = 24.0
 align = 1
-
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q9Container"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "What is the name of the element with 50 protons?"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q9Container"]
 margin_right = 12.0
@@ -401,19 +420,19 @@ margin_right = 40.0
 margin_bottom = 40.0
 alignment = 1
 
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q10Container"]
+margin_right = 40.0
+margin_bottom = 167.0
+text = "What is the name of the chemical compound C3H8?"
+align = 1
+valign = 1
+autowrap = true
+
 [node name="Q10PasswordInput" type="LineEdit" parent="SubQuestions/Q10Container"]
 unique_name_in_owner = true
 margin_right = 58.0
 margin_bottom = 24.0
 align = 1
-
-[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q10Container"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "What is the name of the chemical compound C3H8?"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q10Container"]
 margin_right = 12.0
