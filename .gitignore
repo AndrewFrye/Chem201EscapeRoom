@@ -20,5 +20,6 @@ builds/
 #Editor files
 .vs/
 .idea/
+.vscode/
 backup/
 Resources/Fonts/NotoSans/
