@@ -20,3 +20,4 @@ builds/
 #Editor files
 .vs/
 .idea/
+backup/
