@@ -8,16 +8,17 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SubQuestions" type="TabContainer" parent="."]
-margin_left = 7.0
-margin_top = 26.0
-margin_right = 996.0
-margin_bottom = 579.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -27,39 +28,39 @@ margin_bottom = -4.0
 alignment = 1
 
 [node name="Label" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 189.0
-margin_right = 981.0
-margin_bottom = 203.0
+margin_top = 212.0
+margin_right = 1016.0
+margin_bottom = 226.0
 text = "The Password Is:"
 align = 1
 
 [node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
-margin_top = 207.0
-margin_right = 981.0
-margin_bottom = 232.0
+margin_top = 230.0
+margin_right = 1016.0
+margin_bottom = 255.0
 rect_min_size = Vector2( 0, 25 )
 align = 1
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 236.0
-margin_right = 981.0
-margin_bottom = 250.0
+margin_top = 259.0
+margin_right = 1016.0
+margin_bottom = 273.0
 text = "| 1 | 2 | 3 | 4 | 5 | 6 |"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
-margin_top = 254.0
-margin_right = 981.0
-margin_bottom = 274.0
+margin_top = 277.0
+margin_right = 1016.0
+margin_bottom = 297.0
 text = "Check"
 script = ExtResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_top = 278.0
-margin_right = 981.0
-margin_bottom = 328.0
+margin_top = 301.0
+margin_right = 1016.0
+margin_bottom = 351.0
 rect_min_size = Vector2( 100, 50 )
 scroll_horizontal_enabled = false
 
@@ -67,6 +68,7 @@ scroll_horizontal_enabled = false
 unique_name_in_owner = true
 
 [node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -123,8 +125,8 @@ margin_bottom = 41.0
 custom_fonts/font = ExtResource( 3 )
 text = "1"
 script = ExtResource( 4 )
-DataGridPath = "$PasswordKeyContainer"
-KeyValue = "E"
+DataGridPath = "Null"
+KeyValue = "Null"
 
 [node name="Button2" type="Button" parent="SubQuestions/Q1Container/HBoxContainer/VBoxContainer"]
 margin_top = 45.0
