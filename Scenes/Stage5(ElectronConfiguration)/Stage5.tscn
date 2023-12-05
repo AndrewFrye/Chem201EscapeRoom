@@ -65,6 +65,7 @@ scroll_horizontal_enabled = false
 unique_name_in_owner = true
 
 [node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -72,3 +73,226 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q1Container"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 273.0
+text = "How many valence electrons does Cu+ have?
+m) 1
+ o) 2
+    i) 10
+ e) 8"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Q1PasswordInput" type="LineEdit" parent="SubQuestions/Q1Container"]
+unique_name_in_owner = true
+margin_top = 277.0
+margin_right = 981.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q1Container"]
+margin_top = 306.0
+margin_right = 981.0
+margin_bottom = 326.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q1PasswordInput"
+Password = "e"
+
+[node name="Q2Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q2Container"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 273.0
+text = "Is Selenium paramagnetic or diamagnetic? How many unpaired electrons?
+g) Diamagnetic - 0 electrons
+ e) Paramagnetic - 3 electrons
+  s) Paramagnetic - 2 electrons
+d) Diamagnetic - 2 electrons"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Q2PasswordInput" type="LineEdit" parent="SubQuestions/Q2Container"]
+unique_name_in_owner = true
+margin_top = 277.0
+margin_right = 981.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q2Container"]
+margin_top = 306.0
+margin_right = 981.0
+margin_bottom = 326.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q2PasswordInput"
+Password = "s"
+
+[node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q3Container"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 273.0
+text = "What is the correct electron configuration for Cr+?
+l) 
+r) 
+c) 
+k) "
+align = 1
+valign = 1
+
+[node name="Q3PasswordInput" type="LineEdit" parent="SubQuestions/Q3Container"]
+unique_name_in_owner = true
+margin_top = 277.0
+margin_right = 981.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q3Container"]
+margin_top = 306.0
+margin_right = 981.0
+margin_bottom = 326.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q3PasswordInput"
+Password = "c"
+
+[node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q4Container"]
+margin_top = 208.0
+margin_right = 981.0
+margin_bottom = 256.0
+text = "Is magnesium paramagnetic or diamagnetic?
+  p) Paramagnetic
+a) Diamagnetic"
+align = 1
+valign = 1
+
+[node name="Q4PasswordInput" type="LineEdit" parent="SubQuestions/Q4Container"]
+unique_name_in_owner = true
+margin_top = 260.0
+margin_right = 981.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q4Container"]
+margin_top = 289.0
+margin_right = 981.0
+margin_bottom = 309.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q4PasswordInput"
+Password = "a"
+
+[node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q5Container"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 273.0
+text = "Which element has the most unpaird electrons?
+ e) Cu
+m) Ni
+h) Kr
+ p) As"
+align = 1
+valign = 1
+
+[node name="Q5PasswordInput" type="LineEdit" parent="SubQuestions/Q5Container"]
+unique_name_in_owner = true
+margin_top = 277.0
+margin_right = 981.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q5Container"]
+margin_top = 306.0
+margin_right = 981.0
+margin_bottom = 326.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q5PasswordInput"
+Password = "p"
+
+[node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/Q6Container"]
+margin_top = 191.0
+margin_right = 981.0
+margin_bottom = 273.0
+text = "What is the correct noble gas configuration for Ga3+?
+e) 
+o) 
+t) 
+c) "
+align = 1
+valign = 1
+
+[node name="Q6PasswordInput" type="LineEdit" parent="SubQuestions/Q6Container"]
+unique_name_in_owner = true
+margin_top = 277.0
+margin_right = 981.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 0, 25 )
+align = 1
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/Q6Container"]
+margin_top = 306.0
+margin_right = 981.0
+margin_bottom = 326.0
+text = "Check"
+script = ExtResource( 2 )
+PasswordInputNodePath = "%Q6PasswordInput"
+Password = "e"
