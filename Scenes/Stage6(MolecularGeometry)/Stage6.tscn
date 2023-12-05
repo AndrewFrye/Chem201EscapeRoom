@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="NewBond" type="Button" parent="."]
+margin_right = 130.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 1 )
+text = "New Atom"
