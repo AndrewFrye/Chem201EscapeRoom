@@ -1,84 +1,103 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
-[ext_resource path="res://Scenes/Stage2(Titration)/sprites/ReallyBadFlask.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Common/CheckPasswordButton.cs" type="Script" id=3]
-[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TitrationFlask" type="Sprite" parent="."]
-unique_name_in_owner = true
-position = Vector2( 218, 166 )
-scale = Vector2( 0.125, 0.125 )
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 510, 300 )
+scale = Vector2( 0.255125, 0.264889 )
+texture = ExtResource( 5 )
+
+[node name="Buret" type="Sprite" parent="."]
+position = Vector2( 230, 265 )
+scale = Vector2( 0.651442, 0.555288 )
+texture = ExtResource( 7 )
+
+[node name="Flask" type="Sprite" parent="."]
+position = Vector2( 321, 408 )
+scale = Vector2( 0.337781, 0.415222 )
 texture = ExtResource( 2 )
 
 [node name="AddedBaseVolumeLabel" type="Label" parent="."]
 unique_name_in_owner = true
-margin_left = 78.0
-margin_top = 45.0
-margin_right = 118.0
-margin_bottom = 59.0
+margin_left = 818.0
+margin_top = 118.0
+margin_right = 910.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 6 )
 text = "0.00 mL"
 
 [node name="ResetButton" type="Button" parent="."]
-margin_left = 387.0
-margin_top = 214.0
-margin_right = 461.0
-margin_bottom = 234.0
+margin_left = 829.0
+margin_top = 172.0
+margin_right = 894.0
+margin_bottom = 202.0
 text = "Reset"
 
 [node name="BuretContol" type="VSlider" parent="."]
-margin_left = 409.0
-margin_top = 75.0
-margin_right = 425.0
-margin_bottom = 196.0
+margin_left = 780.0
+margin_top = 120.0
+margin_right = 870.0
+margin_bottom = 400.0
+rect_rotation = 90.0
 max_value = 0.05
 step = 0.0
 script = ExtResource( 1 )
 
-[node name="BuretControlLabel" type="Label" parent="BuretContol"]
-margin_left = -25.0
-margin_top = -21.0
-margin_right = 60.0
-margin_bottom = -7.0
-text = "Buret Control"
+[node name="BuretControlLabel" type="Label" parent="."]
+margin_left = 563.0
+margin_top = 99.0
+margin_right = 727.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 6 )
+text = "Buret Control:"
 
-[node name="[Debug]BuretFlowRateLabel" type="Label" parent="BuretContol"]
+[node name="[Debug]BuretFlowRateLabel" type="Label" parent="."]
 unique_name_in_owner = true
-margin_left = 80.0
-margin_top = -21.0
-margin_right = 120.0
-margin_bottom = -7.0
-text = "Flow Rate"
+margin_left = 804.0
+margin_top = 78.0
+margin_right = 918.0
+margin_bottom = 113.0
+custom_fonts/font = ExtResource( 6 )
+text = "Flow Rate:"
 
 [node name="BackgroundInformation" type="RichTextLabel" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
+[node name="Hint" type="Label" parent="."]
+margin_left = 613.0
+margin_top = 407.0
+margin_right = 785.0
+margin_bottom = 421.0
+text = "(Round to 1 Decimal Place)"
+align = 1
+valign = 1
+
 [node name="CheckPasswordInput" type="Button" parent="."]
-margin_left = 94.0
-margin_top = 420.0
-margin_right = 144.0
-margin_bottom = 440.0
+margin_left = 620.0
+margin_top = 450.0
+margin_right = 780.0
+margin_bottom = 510.0
+custom_fonts/font = ExtResource( 6 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "/root/Control/PasswordInput"
 Password = "12.4"
 
 [node name="PasswordInput" type="TextEdit" parent="."]
-margin_left = 93.0
-margin_top = 365.0
-margin_right = 405.0
-margin_bottom = 405.0
-
-[node name="NextSceneButton" type="Button" parent="."]
-visible = false
-margin_right = 12.0
-margin_bottom = 20.0
-text = "Next Scene"
-script = ExtResource( 4 )
+margin_left = 550.0
+margin_top = 358.0
+margin_right = 850.0
+margin_bottom = 398.0
+custom_fonts/font = ExtResource( 6 )
 
 [connection signal="pressed" from="ResetButton" to="BuretContol" method="_on_ResetButton_pressed"]
