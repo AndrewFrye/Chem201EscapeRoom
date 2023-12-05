@@ -10,12 +10,14 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SubQuestions" type="TabContainer" parent="."]
-margin_left = 7.0
-margin_top = 26.0
-margin_right = 996.0
-margin_bottom = 579.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
@@ -28,9 +30,9 @@ margin_bottom = -4.0
 alignment = 1
 
 [node name="Label" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 139.0
-margin_right = 981.0
-margin_bottom = 153.0
+margin_top = 212.0
+margin_right = 1016.0
+margin_bottom = 226.0
 text = "The Password Is:"
 align = 1
 

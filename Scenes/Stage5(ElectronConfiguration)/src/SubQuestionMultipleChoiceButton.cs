@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using EscapeRoom.Scenes.Common;
+using Godot;
 
 namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
 {
@@ -51,8 +52,11 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
 
         protected override void IncorrectResponsePressed()
         {
+            //PopupControls.OpenIncorrectResponsePopup();
             var popup = new Popup();
+            
             var popupBox = new VBoxContainer();
+            popup.AddChild(popupBox);
             popupBox.Alignment = BoxContainer.AlignMode.Center;
             
             var popupHeader = new Label();
@@ -60,9 +64,11 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
             popupBox.AddChild(popupHeader);
 
             var closePopupButton = new Button();
-            closePopupButton.SetScript(ResourceLoader.Load("res://Scenes/Common/ClosePopupButton.cs"));
-            closePopupButton.Text = "Try Again";
             popupBox.AddChild(closePopupButton);
+            closePopupButton.SetScript(ResourceLoader.Load("res://Scenes/Common/ClosePopupButton.cs"));
+            //closePopupButton.Text = "Try Again";
+            
+            popup.ShowModal(true);
             
         }
     }
