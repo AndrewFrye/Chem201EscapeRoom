@@ -25,12 +25,12 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+alignment = 2
 
 [node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
-margin_top = 51.0
+margin_top = 102.0
 margin_right = 981.0
-margin_bottom = 107.0
+margin_bottom = 158.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Please Enter Password: [/center][/font]"
 text = "Please Enter Password: "
@@ -41,28 +41,28 @@ __meta__ = {
 }
 
 [node name="Spacer1" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 111.0
+margin_top = 162.0
 margin_right = 981.0
-margin_bottom = 125.0
+margin_bottom = 176.0
 
 [node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
 unique_name_in_owner = true
-margin_top = 129.0
+margin_top = 180.0
 margin_right = 981.0
-margin_bottom = 174.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 0, 25 )
 custom_fonts/font = ExtResource( 3 )
 align = 1
 
 [node name="Spacer2" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 178.0
+margin_top = 229.0
 margin_right = 981.0
-margin_bottom = 192.0
+margin_bottom = 243.0
 
 [node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 196.0
+margin_top = 247.0
 margin_right = 981.0
-margin_bottom = 231.0
+margin_bottom = 282.0
 custom_fonts/font = ExtResource( 3 )
 text = "| 1 | 2 | 3 | 4 | 5 | 6 |"
 align = 1
@@ -70,14 +70,14 @@ valign = 1
 autowrap = true
 
 [node name="Spacer3" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 235.0
+margin_top = 286.0
 margin_right = 981.0
-margin_bottom = 249.0
+margin_bottom = 300.0
 
 [node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
-margin_top = 253.0
+margin_top = 304.0
 margin_right = 981.0
-margin_bottom = 294.0
+margin_bottom = 345.0
 custom_fonts/font = ExtResource( 3 )
 text = "Check"
 script = ExtResource( 2 )
@@ -85,14 +85,14 @@ PasswordInputNodePath = "%PasswordInput"
 Password = "ESCAPE"
 
 [node name="Spacer4" type="Label" parent="SubQuestions/PasswordContainer"]
-margin_top = 298.0
+margin_top = 349.0
 margin_right = 981.0
-margin_bottom = 312.0
+margin_bottom = 363.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_top = 316.0
+margin_top = 367.0
 margin_right = 981.0
-margin_bottom = 466.0
+margin_bottom = 517.0
 rect_min_size = Vector2( 100, 150 )
 scroll_horizontal_enabled = false
 
