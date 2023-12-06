@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=8]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
@@ -142,5 +143,7 @@ margin_right = 125.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 6 )
 text = "Continue"
+script = ExtResource( 9 )
+nextSceneString = "res://Scenes/Stage3(Main)/Stage3.tscn"
 
 [connection signal="pressed" from="ResetButton" to="BuretContol" method="_on_ResetButton_pressed"]
