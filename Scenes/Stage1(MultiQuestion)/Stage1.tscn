@@ -723,7 +723,6 @@ nextSceneString = "res://Scenes/Stage2(Titration)/Stage2.tscn"
 
 [node name="CorrectSubQuestionPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
-visible = true
 margin_left = 306.0
 margin_top = 231.0
 margin_right = 431.0
