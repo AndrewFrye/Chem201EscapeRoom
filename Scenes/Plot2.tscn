@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-3.png" type="Texture" id=2]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=3]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SpaceStation-3" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.256, 0.266667 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 75.0
+margin_top = 80.0
+margin_right = -75.0
+margin_bottom = -48.0
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 425.0
+margin_top = 542.0
+margin_right = -425.0
+margin_bottom = -13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 3 )
+text = "Continue"
+script = ExtResource( 4 )
+nextSceneString = "res://Scenes/Stage4(Gases)/Stage4.tscn"
