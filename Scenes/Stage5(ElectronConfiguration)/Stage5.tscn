@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=6]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=7]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=8]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-2.png" type="Texture" id=9]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,18 +20,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="PasswordContainer" type="VBoxContainer" parent="SubQuestions"]
+[node name="PasswordContainer" type="Control" parent="SubQuestions"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 2
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/PasswordContainer"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
-margin_top = 149.0
-margin_right = 1016.0
+anchor_right = 1.0
+margin_left = 150.0
+margin_top = 100.0
+margin_right = -150.0
 margin_bottom = 205.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Please Enter Password: [/center][/font]"
@@ -102,7 +109,7 @@ scroll_horizontal_enabled = false
 [node name="PasswordKeyContainer" type="VBoxContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
 unique_name_in_owner = true
 
-[node name="Q1Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q1Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -110,7 +117,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q1Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/Q1Container"]
 margin_top = 132.0
@@ -207,7 +218,7 @@ CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
 KeyValue = "E"
 
-[node name="Q2Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q2Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -215,7 +226,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q2Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q2Hint" type="RichTextLabel" parent="SubQuestions/Q2Container"]
 margin_top = 104.0
@@ -317,7 +332,7 @@ script = ExtResource( 4 )
 DataGridPath = "Null"
 KeyValue = "Null"
 
-[node name="Q3Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q3Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -325,7 +340,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q3Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q3Hint" type="RichTextLabel" parent="SubQuestions/Q3Container"]
 margin_top = 104.0
@@ -427,7 +446,7 @@ script = ExtResource( 4 )
 DataGridPath = "Null"
 KeyValue = "Null"
 
-[node name="Q4Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q4Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -435,7 +454,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q4Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q4Hint" type="RichTextLabel" parent="SubQuestions/Q4Container"]
 margin_top = 181.0
@@ -503,7 +526,7 @@ DataGridPath = "%PasswordKeyContainer"
 KeyValue = "A"
 KeyIndex = 3
 
-[node name="Q5Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q5Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -511,7 +534,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q5Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q5Hint" type="RichTextLabel" parent="SubQuestions/Q5Container"]
 margin_top = 132.0
@@ -611,7 +638,7 @@ DataGridPath = "%PasswordKeyContainer"
 KeyValue = "P"
 KeyIndex = 4
 
-[node name="Q6Container" type="VBoxContainer" parent="SubQuestions"]
+[node name="Q6Container" type="Control" parent="SubQuestions"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -619,7 +646,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-alignment = 1
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q6Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 9 )
 
 [node name="Q6Hint" type="RichTextLabel" parent="SubQuestions/Q6Container"]
 margin_top = 104.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-2.png" type="Texture" id=8]
 [ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=9]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=10]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
@@ -92,9 +95,10 @@ margin_left = 420.0
 margin_top = 400.0
 margin_right = -420.0
 margin_bottom = 445.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/normal = SubResource( 6 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "%PasswordInput"
@@ -157,6 +161,7 @@ margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
 rect_min_size = Vector2( 150, 30 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = SubResource( 1 )
@@ -217,6 +222,7 @@ margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
 rect_min_size = Vector2( 150, 45 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = SubResource( 2 )
@@ -270,6 +276,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = SubResource( 3 )
@@ -325,6 +332,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = SubResource( 4 )
@@ -383,6 +391,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = SubResource( 5 )
@@ -436,6 +445,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = ExtResource( 9 )
@@ -491,6 +501,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = ExtResource( 9 )
@@ -546,6 +557,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = ExtResource( 9 )
@@ -603,6 +615,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = ExtResource( 9 )
@@ -658,6 +671,7 @@ margin_left = 400.0
 margin_top = 380.0
 margin_right = -400.0
 margin_bottom = 425.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 7 )
 custom_styles/normal = ExtResource( 9 )
