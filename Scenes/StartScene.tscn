@@ -1,20 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=2]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/StartSlide-1.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511.625, 299.625 )
+scale = Vector2( 0.256187, 0.267 )
+texture = ExtResource( 3 )
+
 [node name="NextScene" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 100.0
-margin_top = 100.0
-margin_right = -100.0
-margin_bottom = -100.0
+margin_left = 660.0
+margin_top = 463.0
+margin_right = -36.0
+margin_bottom = -18.0
 custom_fonts/font = ExtResource( 1 )
-text = "Start"
+custom_styles/normal = SubResource( 1 )
+text = "Ready Player 1"
 script = ExtResource( 2 )
 nextSceneString = "res://Scenes/Stage5(ElectronConfiguration)/Stage5.tscn"
