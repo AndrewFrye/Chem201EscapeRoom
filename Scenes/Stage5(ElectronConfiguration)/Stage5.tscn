@@ -22,7 +22,6 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="Control" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -220,6 +219,7 @@ DataGridPath = "%PasswordKeyContainer"
 KeyValue = "E"
 
 [node name="Q2Container" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
