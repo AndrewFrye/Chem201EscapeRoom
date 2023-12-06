@@ -105,14 +105,17 @@ NextScenePopupPath = "%CorrectPopup"
 IncorrectResponsePopupPath = "%IncorrectPopup"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_top = 414.0
-margin_right = 1016.0
-margin_bottom = 564.0
-rect_min_size = Vector2( 100, 150 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 400.0
+margin_top = 434.0
+margin_right = -400.0
+margin_bottom = -30.0
 scroll_horizontal_enabled = false
 
 [node name="PasswordKeyContainer" type="VBoxContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
 unique_name_in_owner = true
+alignment = 1
 
 [node name="Q1Container" type="Control" parent="SubQuestions"]
 visible = false

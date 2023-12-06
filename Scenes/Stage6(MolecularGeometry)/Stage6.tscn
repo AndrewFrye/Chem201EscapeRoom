@@ -21,7 +21,6 @@ anchor_bottom = 1.0
 script = ExtResource( 9 )
 
 [node name="PasswordContainer" type="Control" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -77,7 +76,7 @@ margin_top = 330.0
 margin_right = -100.0
 margin_bottom = 329.0
 custom_fonts/font = ExtResource( 1 )
-text = "| 1 | 2 | 3 | 4 | 5 | 6 |"
+text = "| 1 | 2 | 2 | 3 |"
 align = 1
 valign = 1
 autowrap = true
@@ -105,16 +104,19 @@ NextScenePopupPath = "%CorrectPopup"
 IncorrectResponsePopupPath = "%IncorrectPopup"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
-margin_top = 414.0
-margin_right = 1016.0
-margin_bottom = 564.0
-rect_min_size = Vector2( 100, 150 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 400.0
+margin_top = 434.0
+margin_right = -400.0
+margin_bottom = -30.0
 scroll_horizontal_enabled = false
 
 [node name="PasswordKeyContainer" type="VBoxContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
 unique_name_in_owner = true
 
 [node name="Q1Container" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -134,8 +136,8 @@ margin_top = 70.0
 margin_right = -150.0
 margin_bottom = 188.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]How many valence electrons does Cu[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript] have?[/center][/font]"
-text = "How many valence electrons does Cu+ have?"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the VESPR Shape of CH[font=res://Resources/Fonts/NotoSans/NotoSans25.tres][subscript]4[/subscript][/font]?[/center][/font]"
+text = "What is the VESPR Shape of CH4?"
 fit_content_height = true
 custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
 __meta__ = {
@@ -215,7 +217,7 @@ text = "8"
 script = ExtResource( 2 )
 CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
-KeyValue = "E"
+KeyValue = "B"
 
 [node name="Q2Container" type="Control" parent="SubQuestions"]
 visible = false
@@ -433,307 +435,6 @@ script = ExtResource( 2 )
 DataGridPath = "Null"
 KeyValue = "Null"
 
-[node name="Q4Container" type="Control" parent="SubQuestions"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q4Container"]
-position = Vector2( 506.5, 280.5 )
-scale = Vector2( 0.25675, 0.255556 )
-texture = ExtResource( 3 )
-
-[node name="Q4Hint" type="RichTextLabel" parent="SubQuestions/Q4Container"]
-anchor_right = 1.0
-margin_left = 50.0
-margin_top = 100.0
-margin_right = -50.0
-margin_bottom = 261.0
-bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Is magnesium paramagnetic or diamagnetic?[/center][/font]"
-text = "Is magnesium paramagnetic or diamagnetic?"
-fit_content_height = true
-custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="BigContainer" type="Control" parent="SubQuestions/Q4Container"]
-margin_top = 299.0
-margin_right = 1016.0
-margin_bottom = 359.0
-
-[node name="LeftContainer" type="Control" parent="SubQuestions/Q4Container/BigContainer"]
-margin_left = 279.0
-margin_right = 489.0
-margin_bottom = 60.0
-
-[node name="Choice1" type="Button" parent="SubQuestions/Q4Container/BigContainer/LeftContainer"]
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 50.0
-margin_right = -40.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Paramagnetic"
-script = ExtResource( 2 )
-DataGridPath = "Null"
-KeyValue = "Null"
-
-[node name="MidSpacer" type="Label" parent="SubQuestions/Q4Container/BigContainer"]
-margin_left = 493.0
-margin_top = 23.0
-margin_right = 523.0
-margin_bottom = 37.0
-rect_min_size = Vector2( 30, 0 )
-
-[node name="RightContainer" type="Control" parent="SubQuestions/Q4Container/BigContainer"]
-margin_left = 527.0
-margin_right = 737.0
-margin_bottom = 60.0
-
-[node name="Choice3" type="Button" parent="SubQuestions/Q4Container/BigContainer/RightContainer"]
-anchor_right = 1.0
-margin_left = 40.0
-margin_top = 50.0
-margin_right = 40.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Diamagnetic"
-script = ExtResource( 2 )
-CorrectResponse = true
-DataGridPath = "%PasswordKeyContainer"
-KeyValue = "A"
-KeyIndex = 3
-
-[node name="Q5Container" type="Control" parent="SubQuestions"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q5Container"]
-position = Vector2( 506.5, 280.5 )
-scale = Vector2( 0.25675, 0.255556 )
-texture = ExtResource( 3 )
-
-[node name="Q5Hint" type="RichTextLabel" parent="SubQuestions/Q5Container"]
-anchor_right = 1.0
-margin_left = 50.0
-margin_top = 70.0
-margin_right = -50.0
-margin_bottom = 212.0
-bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Which element has the most
-unpaired electrons?[/center][/font]"
-text = "Which element has the most
-unpaired electrons?"
-fit_content_height = true
-custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="BigContainer" type="Control" parent="SubQuestions/Q5Container"]
-margin_top = 226.0
-margin_right = 981.0
-margin_bottom = 384.0
-
-[node name="LeftContainer" type="Control" parent="SubQuestions/Q5Container/BigContainer"]
-margin_left = 261.0
-margin_right = 471.0
-margin_bottom = 158.0
-
-[node name="Choice1" type="Button" parent="SubQuestions/Q5Container/BigContainer/LeftContainer"]
-anchor_right = 1.0
-margin_top = 80.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Cu"
-script = ExtResource( 2 )
-DataGridPath = "Null"
-KeyValue = "Null"
-
-[node name="Choice2" type="Button" parent="SubQuestions/Q5Container/BigContainer/LeftContainer"]
-anchor_right = 1.0
-margin_top = 180.0
-margin_bottom = 141.0
-rect_min_size = Vector2( 60, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "As"
-script = ExtResource( 2 )
-CorrectResponse = true
-DataGridPath = "%PasswordKeyContainer"
-KeyValue = "P"
-KeyIndex = 4
-
-[node name="MidSpacer" type="Label" parent="SubQuestions/Q5Container/BigContainer"]
-margin_left = 475.0
-margin_top = 72.0
-margin_right = 505.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 30, 0 )
-
-[node name="RightContainer" type="Control" parent="SubQuestions/Q5Container/BigContainer"]
-margin_left = 509.0
-margin_right = 719.0
-margin_bottom = 158.0
-
-[node name="Choice3" type="Button" parent="SubQuestions/Q5Container/BigContainer/RightContainer"]
-anchor_right = 1.0
-margin_top = 80.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Ni"
-script = ExtResource( 2 )
-
-[node name="Choice4" type="Button" parent="SubQuestions/Q5Container/BigContainer/RightContainer"]
-anchor_right = 1.0
-margin_top = 180.0
-margin_bottom = 141.0
-rect_min_size = Vector2( 60, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Kr"
-script = ExtResource( 2 )
-DataGridPath = ""
-KeyValue = ""
-
-[node name="Q6Container" type="Control" parent="SubQuestions"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q6Container"]
-position = Vector2( 506.5, 280.5 )
-scale = Vector2( 0.25675, 0.255556 )
-texture = ExtResource( 3 )
-
-[node name="Q6Hint" type="RichTextLabel" parent="SubQuestions/Q6Container"]
-anchor_right = 1.0
-margin_left = 50.0
-margin_top = 70.0
-margin_right = -50.0
-margin_bottom = 240.0
-bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What element has this noble gas configuration:
-[Ar]4s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]2[/font][/superscript]3d[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]8[/font][/superscript][/center][/font]"
-text = "What element has this noble gas configuration:
-[Ar]4s23d8"
-fit_content_height = true
-custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="BigContainer" type="Control" parent="SubQuestions/Q6Container"]
-margin_top = 226.0
-margin_right = 981.0
-margin_bottom = 384.0
-
-[node name="LeftContainer" type="Control" parent="SubQuestions/Q6Container/BigContainer"]
-margin_left = 261.0
-margin_right = 471.0
-margin_bottom = 158.0
-
-[node name="Choice1" type="Button" parent="SubQuestions/Q6Container/BigContainer/LeftContainer"]
-anchor_right = 1.0
-margin_top = 80.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Pd"
-script = ExtResource( 2 )
-DataGridPath = "Null"
-KeyValue = "Null"
-
-[node name="Choice2" type="Button" parent="SubQuestions/Q6Container/BigContainer/LeftContainer"]
-anchor_right = 1.0
-margin_top = 180.0
-margin_bottom = 141.0
-rect_min_size = Vector2( 60, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Cu"
-script = ExtResource( 2 )
-
-[node name="MidSpacer" type="Label" parent="SubQuestions/Q6Container/BigContainer"]
-margin_left = 475.0
-margin_top = 72.0
-margin_right = 505.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 30, 0 )
-
-[node name="RightContainer" type="Control" parent="SubQuestions/Q6Container/BigContainer"]
-margin_left = 509.0
-margin_right = 719.0
-margin_bottom = 158.0
-
-[node name="Choice3" type="Button" parent="SubQuestions/Q6Container/BigContainer/RightContainer"]
-anchor_right = 1.0
-margin_top = 80.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 210, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Co"
-script = ExtResource( 2 )
-
-[node name="Choice4" type="Button" parent="SubQuestions/Q6Container/BigContainer/RightContainer"]
-anchor_right = 1.0
-margin_top = 180.0
-margin_bottom = 141.0
-rect_min_size = Vector2( 60, 60 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = ExtResource( 6 )
-text = "Ni"
-script = ExtResource( 2 )
-CorrectResponse = true
-DataGridPath = "%PasswordKeyContainer"
-KeyValue = "E"
-KeyIndex = 5
-
 [node name="IncorrectPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
 margin_right = 250.0
@@ -762,4 +463,4 @@ margin_bottom = 50.0
 custom_fonts/font = ExtResource( 1 )
 text = "Continue"
 script = ExtResource( 7 )
-nextSceneString = "res://Scenes/Stage6(MolecularGeometry)/Stage6.tscn"
+nextSceneString = "res://Scenes/EndScene.tscn"
