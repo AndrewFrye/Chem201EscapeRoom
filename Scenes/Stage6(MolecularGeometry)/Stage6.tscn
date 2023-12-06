@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=9]
 [ext_resource path="res://Scenes/Common/GoToFirstTabButton.cs" type="Script" id=10]
 
-[node name="Control" type="Control"]
+[node name="Control3" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -298, 0 )
