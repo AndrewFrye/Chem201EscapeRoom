@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Stage5(ElectronConfiguration)/src/SubQuestionMultipleChoiceButton.cs" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=7]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=8]
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=9]
+[ext_resource path="res://Scenes/Common/GoToFirstTabButton.cs" type="Script" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -298, 0 )
 
 [node name="SubQuestions" type="TabContainer" parent="."]
+unique_name_in_owner = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
@@ -163,7 +165,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "1"
+text = "Trigonal Planar"
 script = ExtResource( 2 )
 DataGridPath = "Null"
 KeyValue = "Null"
@@ -177,7 +179,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "2"
+text = "Bent"
 script = ExtResource( 2 )
 
 [node name="MidSpacer" type="Label" parent="SubQuestions/Q1Container/BigContainer"]
@@ -201,8 +203,11 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "10"
+text = "Tetrahedral"
 script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "B"
 
 [node name="Choice4" type="Button" parent="SubQuestions/Q1Container/BigContainer/RightContainer"]
 anchor_right = 1.0
@@ -213,11 +218,10 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "8"
+text = "Linear"
 script = ExtResource( 2 )
-CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
-KeyValue = "B"
+KeyValue = "Linear"
 
 [node name="Q2Container" type="Control" parent="SubQuestions"]
 visible = false
@@ -445,10 +449,8 @@ margin_right = 250.0
 margin_bottom = 75.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Incorrect Code
-Check your rounding[/center]"
-text = "Incorrect Code
-Check your rounding"
+bbcode_text = "[center]Incorrect[/center]"
+text = "Incorrect"
 fit_content_height = true
 scroll_active = false
 
@@ -464,3 +466,35 @@ custom_fonts/font = ExtResource( 1 )
 text = "Continue"
 script = ExtResource( 7 )
 nextSceneString = "res://Scenes/EndScene.tscn"
+
+[node name="CorrectSubQuestionPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+visible = true
+margin_left = 306.0
+margin_top = 231.0
+margin_right = 431.0
+margin_bottom = 281.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CorrectSubQuestionPopup"]
+margin_right = 125.0
+margin_bottom = 81.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CorrectSubQuestionPopup/VBoxContainer"]
+margin_right = 125.0
+margin_bottom = 36.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Correct[/center]"
+text = "Correct"
+fit_content_height = true
+
+[node name="GoBack" type="Button" parent="CorrectSubQuestionPopup/VBoxContainer"]
+margin_top = 40.0
+margin_right = 125.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Go Back"
+script = ExtResource( 10 )
+TabContainerPath = "%SubQuestions"
