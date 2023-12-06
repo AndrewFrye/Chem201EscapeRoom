@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Stage4(Gases)/src/InfoButtonBase.cs" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 311.0
+margin_top = 12.0
+margin_right = 405.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+script = ExtResource( 2 )
+PopupPath = "%CreditsPopup"
+
+[node name="ConceptsButton" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 102.0
+margin_bottom = 105.0
+custom_fonts/font = ExtResource( 1 )
+text = "Chemistry Concepts"
+script = ExtResource( 2 )
+PopupPath = "%ConceptsPopup"
+
+[node name="ResourcesButton" type="Button" parent="."]
+margin_left = 616.0
+margin_top = 130.0
+margin_right = 861.0
+margin_bottom = 171.0
+custom_fonts/font = ExtResource( 1 )
+text = "Resources Used"
+script = ExtResource( 2 )
+PopupPath = "%ResourcesPopup"
+
+[node name="ReferencesButton" type="Button" parent="."]
+margin_left = 130.0
+margin_top = 187.0
+margin_right = 375.0
+margin_bottom = 228.0
+custom_fonts/font = ExtResource( 1 )
+text = "References"
+script = ExtResource( 2 )
+PopupPath = "%ReferencesPopup"
+
+[node name="CreditsPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_left = 287.0
+margin_top = 177.0
+margin_right = 987.0
+margin_bottom = 327.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPopup"]
+margin_right = 700.0
+margin_bottom = 150.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Andrew Frye: Coding and UI Skeletons
+Guy Manaugh: Construct UI from art assets and skeletons
+Noah Giles: Art Assets
+Yousef Ismail: Question Creation [/center]"
+text = "Andrew Frye: Coding and UI Skeletons
+Guy Manaugh: Construct UI from art assets and skeletons
+Noah Giles: Art Assets
+Yousef Ismail: Question Creation "
+fit_content_height = true
+
+[node name="ConceptsPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_left = 287.0
+margin_top = 177.0
+margin_right = 987.0
+margin_bottom = 327.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConceptsPopup"]
+margin_right = 700.0
+margin_bottom = 150.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Stage 1: 
+Stage 2: Titration
+Stage 3: Neutralization Reaction
+Stage 4: Gases
+Stage 5: Electron Configuration
+Stage 6: Molecular Geometry[/center]"
+text = "Stage 1: 
+Stage 2: Titration
+Stage 3: Neutralization Reaction
+Stage 4: Gases
+Stage 5: Electron Configuration
+Stage 6: Molecular Geometry"
+fit_content_height = true
+
+[node name="ResourcesPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_left = 287.0
+margin_top = 177.0
+margin_right = 987.0
+margin_bottom = 327.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ResourcesPopup"]
+margin_right = 700.0
+margin_bottom = 150.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Created using Godot Engine
+Art Assets made using MS Paint and Canva[/center]"
+text = "Created using Godot Engine
+Art Assets made using MS Paint and Canva"
+fit_content_height = true
+
+[node name="ReferencesPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_left = 287.0
+margin_top = 177.0
+margin_right = 987.0
+margin_bottom = 327.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ReferencesPopup"]
+margin_right = 700.0
+margin_bottom = 150.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Stage 1: 
+Stage 2: Titration
+Stage 3: Neutralization Reaction
+Stage 4: Gases
+Stage 5: Electron Configuration
+Stage 6: Molecular Geometry[/center]"
+text = "Stage 1: 
+Stage 2: Titration
+Stage 3: Neutralization Reaction
+Stage 4: Gases
+Stage 5: Electron Configuration
+Stage 6: Molecular Geometry"
+fit_content_height = true
