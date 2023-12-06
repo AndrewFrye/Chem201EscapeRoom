@@ -45,27 +45,12 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
             }
 
             valuesAdded = true;
+            GetNode<WindowDialog>("%CorrectSubQuestionPopup").PopupCenteredClamped();
         }
 
         protected override void IncorrectResponsePressed()
         {
-            //PopupControls.OpenIncorrectResponsePopup();
-            var popup = new Popup();
-
-            var popupBox = new VBoxContainer();
-            popup.AddChild(popupBox);
-            popupBox.Alignment = BoxContainer.AlignMode.Center;
-
-            var popupHeader = new Label();
-            popupHeader.Text = "Incorrect";
-            popupBox.AddChild(popupHeader);
-
-            var closePopupButton = new Button();
-            popupBox.AddChild(closePopupButton);
-            closePopupButton.SetScript(ResourceLoader.Load("res://Scenes/Common/ClosePopupButton.cs"));
-            //closePopupButton.Text = "Try Again";
-
-            popup.ShowModal(true);
+            GetNode<WindowDialog>("%IncorrectPopup");
         }
     }
 }
