@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=9]
 [ext_resource path="res://Scenes/Common/GoToFirstTabButton.cs" type="Script" id=10]
 
-[node name="Control" type="Control"]
+[node name="Control3" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -298, 0 )
@@ -481,8 +481,8 @@ margin_right = 125.0
 margin_bottom = 36.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Correct[/center]"
-text = "Correct"
+bbcode_text = "[center]Correct![/center]"
+text = "Correct!"
 fit_content_height = true
 
 [node name="GoBack" type="Button" parent="CorrectSubQuestionPopup/VBoxContainer"]
