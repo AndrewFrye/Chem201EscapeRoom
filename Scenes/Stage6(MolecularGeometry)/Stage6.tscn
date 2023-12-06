@@ -441,12 +441,14 @@ KeyValue = "Null"
 
 [node name="IncorrectPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
+visible = true
 margin_right = 250.0
 margin_bottom = 75.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="IncorrectPopup"]
-margin_right = 250.0
-margin_bottom = 75.0
+anchor_right = 1.0
+margin_top = 15.0
+margin_bottom = 55.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Incorrect[/center]"
@@ -462,7 +464,10 @@ margin_bottom = 50.0
 [node name="NextScene" type="Button" parent="CorrectPopup"]
 margin_right = 125.0
 margin_bottom = 50.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 text = "Continue"
 script = ExtResource( 7 )
 nextSceneString = "res://Scenes/EndScene.tscn"
