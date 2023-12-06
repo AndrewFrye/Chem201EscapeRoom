@@ -69,7 +69,7 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
 
         protected override void onIncorrectInput()
         {
-            throw new System.NotImplementedException();
+            GetNode<WindowDialog>("%IncorrectPopup").PopupCenteredClamped();
         }
     }
 }

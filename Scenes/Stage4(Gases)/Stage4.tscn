@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Stage4(Gases)/src/InfoButtonBase.cs" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=2]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=3]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=7]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=8]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=9]
@@ -131,10 +132,11 @@ custom_effects = [ ExtResource( 3 ), ExtResource( 2 ) ]
 
 [node name="PasswordEntryPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
+visible = true
 margin_left = 44.0
 margin_top = 198.0
 margin_right = 419.0
-margin_bottom = 348.0
+margin_bottom = 412.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_styles/panel = SubResource( 4 )
@@ -180,8 +182,7 @@ margin_top = 61.0
 margin_right = 962.0
 margin_bottom = 248.0
 custom_fonts/font = ExtResource( 4 )
-text = "You enter a room and see a box filled with a yellowish gas, the warning label reads
-\"DANGER - CHLORINE GAS\"
+text = "You enter a room and see a box filled with a yellowish gas, find the grams of gas contained inside the box:
 "
 align = 1
 valign = 1
@@ -268,7 +269,10 @@ margin_bottom = 50.0
 [node name="NextScene" type="Button" parent="CorrectPopup"]
 margin_right = 125.0
 margin_bottom = 50.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = ExtResource( 6 )
 text = "Continue"
 script = ExtResource( 8 )
 nextSceneString = "res://Scenes/Stage5(ElectronConfiguration)/Stage5.tscn"

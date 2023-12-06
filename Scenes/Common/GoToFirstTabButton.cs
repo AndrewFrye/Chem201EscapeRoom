@@ -9,7 +9,7 @@ namespace EscapeRoom.Scenes.Common
         public override void _Pressed()
         {
             GetNode<TabContainer>("%SubQuestions").CurrentTab = 0;
-            GetParent<WindowDialog>().Hide();
+            GetParent().GetParent<WindowDialog>().Hide();
         }
     }
 }

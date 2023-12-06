@@ -50,7 +50,7 @@ namespace EscapeRoom.Scenes.Stage5_ElectronConfiguration_.src
 
         protected override void IncorrectResponsePressed()
         {
-            GetNode<WindowDialog>("%IncorrectPopup");
+            GetNode<WindowDialog>("%IncorrectPopup").PopupCenteredClamped();
         }
     }
 }
