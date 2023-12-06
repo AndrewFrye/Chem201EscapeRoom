@@ -5,7 +5,6 @@
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=3]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
-[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=7]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=8]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=9]
@@ -15,6 +14,9 @@
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -164,7 +166,7 @@ margin_bottom = 185.0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 4 )
-custom_styles/normal = ExtResource( 6 )
+custom_styles/normal = SubResource( 6 )
 text = "Check"
 script = ExtResource( 7 )
 PasswordInputNodePath = "%PasswordInput"

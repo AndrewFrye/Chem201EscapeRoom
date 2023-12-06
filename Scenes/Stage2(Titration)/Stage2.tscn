@@ -15,7 +15,7 @@ bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
