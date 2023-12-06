@@ -64,6 +64,7 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
             }
 
             valuesAdded = true;
+            GetNode<WindowDialog>("%CorrectSubQuestionPopup").PopupCenteredClamped();
         }
 
         protected override void onIncorrectInput()
