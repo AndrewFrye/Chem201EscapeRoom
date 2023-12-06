@@ -28,8 +28,8 @@ margin_top = 138.0
 margin_right = 1008.0
 margin_bottom = 194.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]How many valence electrons does Cu[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]+[/font][/superscript] have?[/center][/font]"
-text = "How many valence electrons does Cu+ have?"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the VESPR Shape of CH[font=res://Resources/Fonts/NotoSans/NotoSans25.tres][subscript]4[/subscript][/font]?[/center][/font]"
+text = "What is the VESPR Shape of CH4?"
 fit_content_height = true
 custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
 __meta__ = {
@@ -116,7 +116,7 @@ text = "8"
 script = ExtResource( 2 )
 CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
-KeyValue = "E"
+KeyValue = "B"
 
 [node name="Control2" type="Control" parent="Tabs"]
 visible = false
