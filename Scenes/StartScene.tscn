@@ -38,4 +38,4 @@ custom_styles/disabled = SubResource( 5 )
 custom_styles/normal = SubResource( 1 )
 text = "Ready Player 1"
 script = ExtResource( 2 )
-nextSceneString = "res://Scenes/Stage1(MultiQuestion)/Stage1.tscn"
+nextSceneString = "res://Scenes/Plot1.tscn"

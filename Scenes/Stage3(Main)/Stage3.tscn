@@ -41,7 +41,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 5 )
 text = "Continue"
 script = ExtResource( 3 )
-nextSceneString = "res://Scenes/Stage4(Gases)/Stage4.tscn"
+nextSceneString = "res://Scenes/Plot2.tscn"
 
 [node name="IncorrectPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true

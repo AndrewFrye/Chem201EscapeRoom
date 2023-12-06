@@ -771,7 +771,7 @@ custom_fonts/font = ExtResource( 3 )
 custom_styles/normal = ExtResource( 10 )
 text = "Continue"
 script = ExtResource( 7 )
-nextSceneString = "res://Scenes/Stage6(MolecularGeometry)/Stage6.tscn"
+nextSceneString = "res://Scenes/Plot3.tscn"
 
 [node name="CorrectSubQuestionPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
