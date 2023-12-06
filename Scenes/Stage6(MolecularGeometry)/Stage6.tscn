@@ -1,21 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/Stage5(ElectronConfiguration)/src/SubQuestionMultipleChoiceButton.cs" type="Script" id=2]
-[ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=3]
+[ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-2.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Subscript.tres" type="RichTextEffect" id=4]
 [ext_resource path="res://Resources/Fonts/RichTextEffects/Effects/Superscript.tres" type="RichTextEffect" id=5]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=6]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=7]
+[ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=8]
+[ext_resource path="res://Scenes/Stage1(MultiQuestion)/src/SubQuestionContainer.cs" type="Script" id=9]
 
-[node name="Node2D" type="Control"]
-script = ExtResource( 3 )
-
-[node name="Tabs" type="TabContainer" parent="."]
+[node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1024.0
-margin_bottom = 600.0
+rect_pivot_offset = Vector2( -298, 0 )
 
-[node name="Q1Container" type="Control" parent="Tabs"]
+[node name="SubQuestions" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="PasswordContainer" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -23,10 +29,110 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Q1Hint" type="RichTextLabel" parent="Tabs/Q1Container"]
-margin_top = 138.0
-margin_right = 1008.0
-margin_bottom = 194.0
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/PasswordContainer"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/PasswordContainer"]
+anchor_right = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = 205.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Please Enter Password: [/center][/font]"
+text = "Please Enter Password: "
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Spacer1" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 209.0
+margin_right = 1016.0
+margin_bottom = 223.0
+
+[node name="PasswordInput" type="LineEdit" parent="SubQuestions/PasswordContainer"]
+unique_name_in_owner = true
+anchor_right = 1.0
+margin_left = 250.0
+margin_top = 280.0
+margin_right = -250.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 25 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+
+[node name="Spacer2" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 276.0
+margin_right = 1016.0
+margin_bottom = 290.0
+
+[node name="PasswordHintLabel" type="Label" parent="SubQuestions/PasswordContainer"]
+anchor_right = 1.0
+margin_left = 100.0
+margin_top = 330.0
+margin_right = -100.0
+margin_bottom = 329.0
+custom_fonts/font = ExtResource( 1 )
+text = "| 1 | 2 | 3 | 4 | 5 | 6 |"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Spacer3" type="Label" parent="SubQuestions/PasswordContainer"]
+margin_top = 333.0
+margin_right = 1016.0
+margin_bottom = 347.0
+
+[node name="CheckPasswordButton" type="Button" parent="SubQuestions/PasswordContainer"]
+anchor_right = 1.0
+margin_left = 400.0
+margin_top = 390.0
+margin_right = -400.0
+margin_bottom = 392.0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Check"
+script = ExtResource( 8 )
+PasswordInputNodePath = "%PasswordInput"
+Password = "ESCAPE"
+NextScenePopupPath = "%CorrectPopup"
+IncorrectResponsePopupPath = "%IncorrectPopup"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SubQuestions/PasswordContainer"]
+margin_top = 414.0
+margin_right = 1016.0
+margin_bottom = 564.0
+rect_min_size = Vector2( 100, 150 )
+scroll_horizontal_enabled = false
+
+[node name="PasswordKeyContainer" type="VBoxContainer" parent="SubQuestions/PasswordContainer/ScrollContainer"]
+unique_name_in_owner = true
+
+[node name="Q1Container" type="Control" parent="SubQuestions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q1Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q1Hint" type="RichTextLabel" parent="SubQuestions/Q1Container"]
+anchor_right = 1.0
+margin_left = 150.0
+margin_top = 70.0
+margin_right = -150.0
+margin_bottom = 188.0
 bbcode_enabled = true
 bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the VESPR Shape of CH[font=res://Resources/Fonts/NotoSans/NotoSans25.tres][subscript]4[/subscript][/font]?[/center][/font]"
 text = "What is the VESPR Shape of CH4?"
@@ -36,89 +142,624 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="QuestionSpacer" type="Label" parent="Tabs/Q1Container"]
-margin_top = 198.0
-margin_right = 1008.0
-margin_bottom = 228.0
-rect_min_size = Vector2( 0, 30 )
+[node name="BigContainer" type="Control" parent="SubQuestions/Q1Container"]
+margin_top = 226.0
+margin_right = 981.0
+margin_bottom = 384.0
 
-[node name="BigContainer" type="HBoxContainer" parent="Tabs/Q1Container"]
-margin_top = 232.0
-margin_right = 1008.0
-margin_bottom = 390.0
-alignment = 1
-
-[node name="LeftContainer" type="VBoxContainer" parent="Tabs/Q1Container/BigContainer"]
-margin_left = 275.0
-margin_right = 485.0
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q1Container/BigContainer"]
+margin_left = 261.0
+margin_right = 471.0
 margin_bottom = 158.0
-alignment = 1
 
-[node name="Choice1" type="Button" parent="Tabs/Q1Container/BigContainer/LeftContainer"]
-margin_right = 210.0
-margin_bottom = 60.0
+[node name="Choice1" type="Button" parent="SubQuestions/Q1Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
 rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 text = "1"
 script = ExtResource( 2 )
 DataGridPath = "Null"
 KeyValue = "Null"
 
-[node name="VertSpacer" type="Label" parent="Tabs/Q1Container/BigContainer/LeftContainer"]
-margin_top = 64.0
-margin_right = 210.0
-margin_bottom = 94.0
-rect_min_size = Vector2( 0, 30 )
-
-[node name="Choice2" type="Button" parent="Tabs/Q1Container/BigContainer/LeftContainer"]
-margin_top = 98.0
-margin_right = 210.0
-margin_bottom = 158.0
+[node name="Choice2" type="Button" parent="SubQuestions/Q1Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
 rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 text = "2"
 script = ExtResource( 2 )
 
-[node name="MidSpacer" type="Label" parent="Tabs/Q1Container/BigContainer"]
-margin_left = 489.0
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q1Container/BigContainer"]
+margin_left = 475.0
 margin_top = 72.0
-margin_right = 519.0
+margin_right = 505.0
 margin_bottom = 86.0
 rect_min_size = Vector2( 30, 0 )
 
-[node name="RightContainer" type="VBoxContainer" parent="Tabs/Q1Container/BigContainer"]
-margin_left = 523.0
-margin_right = 733.0
+[node name="RightContainer" type="Control" parent="SubQuestions/Q1Container/BigContainer"]
+margin_left = 509.0
+margin_right = 719.0
 margin_bottom = 158.0
-alignment = 1
 
-[node name="Choice3" type="Button" parent="Tabs/Q1Container/BigContainer/RightContainer"]
-margin_right = 210.0
-margin_bottom = 60.0
+[node name="Choice3" type="Button" parent="SubQuestions/Q1Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
 rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 text = "10"
 script = ExtResource( 2 )
 
-[node name="VertSpacer" type="Label" parent="Tabs/Q1Container/BigContainer/RightContainer"]
-margin_top = 64.0
-margin_right = 210.0
-margin_bottom = 94.0
-rect_min_size = Vector2( 0, 30 )
-
-[node name="Choice4" type="Button" parent="Tabs/Q1Container/BigContainer/RightContainer"]
-margin_top = 98.0
-margin_right = 210.0
-margin_bottom = 158.0
+[node name="Choice4" type="Button" parent="SubQuestions/Q1Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
 rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
 text = "8"
 script = ExtResource( 2 )
 CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
 KeyValue = "B"
 
-[node name="Control2" type="Control" parent="Tabs"]
+[node name="Q2Container" type="Control" parent="SubQuestions"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q2Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q2Hint" type="RichTextLabel" parent="SubQuestions/Q2Container"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 70.0
+margin_right = -50.0
+margin_bottom = 240.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Is selenium diamagnetic or paramangetic?
+How many unpaired electrons?[/center][/font]"
+text = "Is selenium diamagnetic or paramangetic?
+How many unpaired electrons?"
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BigContainer" type="Control" parent="SubQuestions/Q2Container"]
+margin_top = 226.0
+margin_right = 981.0
+margin_bottom = 384.0
+
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q2Container/BigContainer"]
+margin_left = 261.0
+margin_right = 471.0
+margin_bottom = 158.0
+
+[node name="Choice1" type="Button" parent="SubQuestions/Q2Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Diamagnetic - 0"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="Choice2" type="Button" parent="SubQuestions/Q2Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Paramagnetic - 3"
+script = ExtResource( 2 )
+
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q2Container/BigContainer"]
+margin_left = 475.0
+margin_top = 72.0
+margin_right = 505.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="RightContainer" type="Control" parent="SubQuestions/Q2Container/BigContainer"]
+margin_left = 509.0
+margin_right = 719.0
+margin_bottom = 158.0
+
+[node name="Choice3" type="Button" parent="SubQuestions/Q2Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Paramagnetic - 2"
+script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "S"
+KeyIndex = 1
+
+[node name="Choice4" type="Button" parent="SubQuestions/Q2Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Diamagnetic - 2"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="Q3Container" type="Control" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q3Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q3Hint" type="RichTextLabel" parent="SubQuestions/Q3Container"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 70.0
+margin_right = -50.0
+margin_bottom = 240.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What element has this electron configuration:
+1s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]2[/font][/superscript]2s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]2[/font][/superscript]2p[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]6[/font][/superscript]3s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]2[/font][/superscript]3p[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]6[/font][/superscript]4s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]1[/font][/superscript]3d[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]5[/font][/superscript][/center][/font]"
+text = "What element has this electron configuration:
+1s22s22p63s23p64s13d5"
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BigContainer" type="Control" parent="SubQuestions/Q3Container"]
+margin_top = 226.0
+margin_right = 981.0
+margin_bottom = 384.0
+
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q3Container/BigContainer"]
+margin_left = 261.0
+margin_right = 471.0
+margin_bottom = 158.0
+
+[node name="Choice1" type="Button" parent="SubQuestions/Q3Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Cr"
+script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "C"
+KeyIndex = 2
+
+[node name="Choice2" type="Button" parent="SubQuestions/Q3Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "V"
+script = ExtResource( 2 )
+
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q3Container/BigContainer"]
+margin_left = 475.0
+margin_top = 72.0
+margin_right = 505.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="RightContainer" type="Control" parent="SubQuestions/Q3Container/BigContainer"]
+margin_left = 509.0
+margin_right = 719.0
+margin_bottom = 158.0
+
+[node name="Choice3" type="Button" parent="SubQuestions/Q3Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Ni"
+script = ExtResource( 2 )
+
+[node name="Choice4" type="Button" parent="SubQuestions/Q3Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Cu"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="Q4Container" type="Control" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q4Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q4Hint" type="RichTextLabel" parent="SubQuestions/Q4Container"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 100.0
+margin_right = -50.0
+margin_bottom = 261.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Is magnesium paramagnetic or diamagnetic?[/center][/font]"
+text = "Is magnesium paramagnetic or diamagnetic?"
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BigContainer" type="Control" parent="SubQuestions/Q4Container"]
+margin_top = 299.0
+margin_right = 1016.0
+margin_bottom = 359.0
+
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q4Container/BigContainer"]
+margin_left = 279.0
+margin_right = 489.0
+margin_bottom = 60.0
+
+[node name="Choice1" type="Button" parent="SubQuestions/Q4Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 50.0
+margin_right = -40.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Paramagnetic"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q4Container/BigContainer"]
+margin_left = 493.0
+margin_top = 23.0
+margin_right = 523.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="RightContainer" type="Control" parent="SubQuestions/Q4Container/BigContainer"]
+margin_left = 527.0
+margin_right = 737.0
+margin_bottom = 60.0
+
+[node name="Choice3" type="Button" parent="SubQuestions/Q4Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_left = 40.0
+margin_top = 50.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Diamagnetic"
+script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "A"
+KeyIndex = 3
+
+[node name="Q5Container" type="Control" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q5Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q5Hint" type="RichTextLabel" parent="SubQuestions/Q5Container"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 70.0
+margin_right = -50.0
+margin_bottom = 212.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Which element has the most
+unpaired electrons?[/center][/font]"
+text = "Which element has the most
+unpaired electrons?"
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BigContainer" type="Control" parent="SubQuestions/Q5Container"]
+margin_top = 226.0
+margin_right = 981.0
+margin_bottom = 384.0
+
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q5Container/BigContainer"]
+margin_left = 261.0
+margin_right = 471.0
+margin_bottom = 158.0
+
+[node name="Choice1" type="Button" parent="SubQuestions/Q5Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Cu"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="Choice2" type="Button" parent="SubQuestions/Q5Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "As"
+script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "P"
+KeyIndex = 4
+
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q5Container/BigContainer"]
+margin_left = 475.0
+margin_top = 72.0
+margin_right = 505.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="RightContainer" type="Control" parent="SubQuestions/Q5Container/BigContainer"]
+margin_left = 509.0
+margin_right = 719.0
+margin_bottom = 158.0
+
+[node name="Choice3" type="Button" parent="SubQuestions/Q5Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Ni"
+script = ExtResource( 2 )
+
+[node name="Choice4" type="Button" parent="SubQuestions/Q5Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Kr"
+script = ExtResource( 2 )
+DataGridPath = ""
+KeyValue = ""
+
+[node name="Q6Container" type="Control" parent="SubQuestions"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QuestionBackground" type="Sprite" parent="SubQuestions/Q6Container"]
+position = Vector2( 506.5, 280.5 )
+scale = Vector2( 0.25675, 0.255556 )
+texture = ExtResource( 3 )
+
+[node name="Q6Hint" type="RichTextLabel" parent="SubQuestions/Q6Container"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 70.0
+margin_right = -50.0
+margin_bottom = 240.0
+bbcode_enabled = true
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What element has this noble gas configuration:
+[Ar]4s[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]2[/font][/superscript]3d[superscript][font=res://Resources/Fonts/NotoSans/NotoSans25.tres]8[/font][/superscript][/center][/font]"
+text = "What element has this noble gas configuration:
+[Ar]4s23d8"
+fit_content_height = true
+custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BigContainer" type="Control" parent="SubQuestions/Q6Container"]
+margin_top = 226.0
+margin_right = 981.0
+margin_bottom = 384.0
+
+[node name="LeftContainer" type="Control" parent="SubQuestions/Q6Container/BigContainer"]
+margin_left = 261.0
+margin_right = 471.0
+margin_bottom = 158.0
+
+[node name="Choice1" type="Button" parent="SubQuestions/Q6Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Pd"
+script = ExtResource( 2 )
+DataGridPath = "Null"
+KeyValue = "Null"
+
+[node name="Choice2" type="Button" parent="SubQuestions/Q6Container/BigContainer/LeftContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Cu"
+script = ExtResource( 2 )
+
+[node name="MidSpacer" type="Label" parent="SubQuestions/Q6Container/BigContainer"]
+margin_left = 475.0
+margin_top = 72.0
+margin_right = 505.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 30, 0 )
+
+[node name="RightContainer" type="Control" parent="SubQuestions/Q6Container/BigContainer"]
+margin_left = 509.0
+margin_right = 719.0
+margin_bottom = 158.0
+
+[node name="Choice3" type="Button" parent="SubQuestions/Q6Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 210, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Co"
+script = ExtResource( 2 )
+
+[node name="Choice4" type="Button" parent="SubQuestions/Q6Container/BigContainer/RightContainer"]
+anchor_right = 1.0
+margin_top = 180.0
+margin_bottom = 141.0
+rect_min_size = Vector2( 60, 60 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+text = "Ni"
+script = ExtResource( 2 )
+CorrectResponse = true
+DataGridPath = "%PasswordKeyContainer"
+KeyValue = "E"
+KeyIndex = 5
+
+[node name="IncorrectPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_right = 250.0
+margin_bottom = 75.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="IncorrectPopup"]
+margin_right = 250.0
+margin_bottom = 75.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Incorrect Code
+Check your rounding[/center]"
+text = "Incorrect Code
+Check your rounding"
+fit_content_height = true
+scroll_active = false
+
+[node name="CorrectPopup" type="WindowDialog" parent="."]
+unique_name_in_owner = true
+margin_right = 125.0
+margin_bottom = 50.0
+
+[node name="NextScene" type="Button" parent="CorrectPopup"]
+margin_right = 125.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "Continue"
+script = ExtResource( 7 )
+nextSceneString = "res://Scenes/Stage6(MolecularGeometry)/Stage6.tscn"
