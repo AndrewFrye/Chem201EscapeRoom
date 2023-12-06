@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretteCheckPasswordButton.cs" type="Script" id=3]
+[ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=4]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/SpaceStation-1.png" type="Texture" id=5]
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
@@ -14,7 +15,7 @@ bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
@@ -103,7 +104,7 @@ margin_bottom = 507.0
 custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = ExtResource( 4 )
 text = "Check"
 script = ExtResource( 3 )
 PasswordInputNodePath = "%PasswordInput"
