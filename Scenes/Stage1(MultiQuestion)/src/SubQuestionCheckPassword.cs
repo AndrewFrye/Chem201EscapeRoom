@@ -30,6 +30,7 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
             valueLabel.Text = keyValue;
 
             var row = new HBoxContainer();
+            row.Alignment = BoxContainer.AlignMode.Center;
             row.AddChild(indexLabel);
             row.AddChild(valueLabel);
 
@@ -42,6 +43,7 @@ namespace EscapeRoom.Scenes.Stage1_MultiQuestion_.src
                 value2Label.Text = key2Value;
 
                 var row2 = new HBoxContainer();
+                row2.Alignment = BoxContainer.AlignMode.Center;
                 row2.AddChild(index2Label);
                 row2.AddChild(value2Label);
 

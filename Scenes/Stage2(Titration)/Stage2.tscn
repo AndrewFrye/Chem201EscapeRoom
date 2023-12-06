@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Stage2(Titration)/src/BuretContol.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/ClearFlask.png" type="Texture" id=2]
@@ -7,12 +7,12 @@
 [ext_resource path="res://Resources/Fonts/NotoSans/NotoSans25.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scenes/Stage2(Titration)/sprites/Burette.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Common/MasterDebug.cs" type="Script" id=8]
+[ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -30,6 +30,7 @@ scale = Vector2( 0.651442, 0.555288 )
 texture = ExtResource( 7 )
 
 [node name="Flask" type="Sprite" parent="."]
+unique_name_in_owner = true
 position = Vector2( 321, 408 )
 scale = Vector2( 0.337781, 0.415222 )
 texture = ExtResource( 2 )
@@ -139,11 +140,14 @@ scroll_active = false
 unique_name_in_owner = true
 margin_right = 125.0
 margin_bottom = 50.0
+custom_styles/panel = SubResource( 2 )
 
 [node name="NextScene" type="Button" parent="CorrectPopup"]
 margin_right = 125.0
 margin_bottom = 50.0
 custom_fonts/font = ExtResource( 6 )
 text = "Continue"
+script = ExtResource( 9 )
+nextSceneString = "res://Scenes/Stage3(Main)/Stage3.tscn"
 
 [connection signal="pressed" from="ResetButton" to="BuretContol" method="_on_ResetButton_pressed"]

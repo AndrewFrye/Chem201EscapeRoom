@@ -21,6 +21,8 @@ public class BuretContol : VSlider
 
     public override void _Process(float delta)
     {
+        if (flask == null) return;
+        
         //Set the debug label for showing the current flow rate, this will be disabled in the final version
         flowRateLabel.Text = $"{Math.Round((decimal)Value, 5)} mL/s";
 
