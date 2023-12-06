@@ -23,6 +23,7 @@ anchor_bottom = 1.0
 script = ExtResource( 9 )
 
 [node name="PasswordContainer" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -224,7 +225,6 @@ DataGridPath = "%PasswordKeyContainer"
 KeyValue = "Linear"
 
 [node name="Q2Container" type="Control" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -244,10 +244,8 @@ margin_top = 70.0
 margin_right = -50.0
 margin_bottom = 240.0
 bbcode_enabled = true
-bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]Is selenium diamagnetic or paramangetic?
-How many unpaired electrons?[/center][/font]"
-text = "Is selenium diamagnetic or paramangetic?
-How many unpaired electrons?"
+bbcode_text = "[font=res://Resources/Fonts/NotoSans/NotoSans40.tres][center]What is the ideal bond angle of a molecule that is trigonal planar[/center][/font]"
+text = "What is the ideal bond angle of a molecule that is trigonal planar"
 fit_content_height = true
 custom_effects = [ ExtResource( 4 ), ExtResource( 5 ) ]
 __meta__ = {
@@ -273,7 +271,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "Diamagnetic - 0"
+text = "180°"
 script = ExtResource( 2 )
 DataGridPath = "Null"
 KeyValue = "Null"
@@ -287,7 +285,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "Paramagnetic - 3"
+text = "90°"
 script = ExtResource( 2 )
 
 [node name="MidSpacer" type="Label" parent="SubQuestions/Q2Container/BigContainer"]
@@ -311,11 +309,11 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "Paramagnetic - 2"
+text = "120°"
 script = ExtResource( 2 )
 CorrectResponse = true
 DataGridPath = "%PasswordKeyContainer"
-KeyValue = "S"
+KeyValue = "O"
 KeyIndex = 1
 
 [node name="Choice4" type="Button" parent="SubQuestions/Q2Container/BigContainer/RightContainer"]
@@ -327,7 +325,7 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/normal = ExtResource( 6 )
-text = "Diamagnetic - 2"
+text = "109.5°"
 script = ExtResource( 2 )
 DataGridPath = "Null"
 KeyValue = "Null"
@@ -469,7 +467,6 @@ nextSceneString = "res://Scenes/EndScene.tscn"
 
 [node name="CorrectSubQuestionPopup" type="WindowDialog" parent="."]
 unique_name_in_owner = true
-visible = true
 margin_left = 306.0
 margin_top = 231.0
 margin_right = 431.0
