@@ -41,6 +41,7 @@ margin_bottom = 600.0
 script = ExtResource( 1 )
 
 [node name="PasswordContainer" type="Control" parent="SubQuestions"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -521,7 +522,6 @@ keyIndex = 8
 key2Index = 11
 
 [node name="Q8Container" type="Control" parent="SubQuestions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -569,7 +569,7 @@ custom_styles/normal = ExtResource( 9 )
 text = "Check"
 script = ExtResource( 4 )
 PasswordInputNodePath = "%Q8PasswordInput"
-Password = "Dihydrogen monoxide"
+Password = "Hydrogen monoxide"
 dataGridPath = "%PasswordKeyContainer"
 keyValue = "O"
 key2Value = "D"
