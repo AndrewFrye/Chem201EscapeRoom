@@ -5,7 +5,7 @@
 [ext_resource path="res://Resources/StyleBoxes/Button.tres" type="StyleBox" id=3]
 [ext_resource path="res://Scenes/Common/NextSceneButton.cs" type="Script" id=4]
 
-[node name="Control" type="Control"]
+[node name="Control3" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
